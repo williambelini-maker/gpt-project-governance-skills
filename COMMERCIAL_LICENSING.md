@@ -60,3 +60,12 @@ It does not grant rights by itself. Commercial rights arise only from a complete
 ## Contributions
 
 Commercial licensing of incorporated external contributions depends on contributors having accepted `CONTRIBUTOR_LICENSE_AGREEMENT.md`. Contributions that do not satisfy the repository contribution policy must not be merged into commercially licensable project history.
+
+
+## Governing law and disputes
+
+The repository does not make a universal advance choice of governing law, court, venue, or arbitration forum.
+
+If a specific commercial contract defines those terms, that signed agreement governs to the extent legally effective.
+
+If no binding agreement has already selected them and a dispute arises, the rights holder may choose the governing-law and forum position it wishes to assert for that specific matter, subject to mandatory applicable law and the authority of the competent court, tribunal, or arbitrator.
