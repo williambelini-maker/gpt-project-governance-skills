@@ -14,7 +14,8 @@ Artefatos prontos para `ChatGPT -> Criar plugin -> Importar`.
 - marketplace: não incluído no ZIP
 - SHA-256: `c0037c3e3bece289fc3c19113ef58e3f837ffa1bfb95c81200e48bfe44104c92`
 - tamanho: `170028` bytes
-- estado: validado e pronto para publicação
+- Git commit: `3b16f95eb1ba0174da96153936c03b5fe7094afe`
+- estado: publicado
 
 ## Histórico
 
