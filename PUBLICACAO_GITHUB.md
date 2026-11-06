@@ -35,9 +35,14 @@ Esta verificação reduz risco de exposição acidental, mas não substitui secr
 
 ## Licença
 
-`LICENSE_STATUS = UNDECIDED`
+`LICENSE_STATUS = DUAL_NONCOMMERCIAL_WITH_SEPARATE_COMMERCIAL_LICENSING`
 
-O repositório pode ser público sem arquivo LICENSE, mas isso **não concede automaticamente uma licença de reutilização**. Não foi escolhida licença em nome do proprietário.
+O repositório usa licenciamento público não comercial:
+- Skills operacionais/ativos instaláveis: PolyForm Noncommercial 1.0.0;
+- documentação/metodologia: CC BY-NC-SA 4.0;
+- direitos comerciais: reservados para acordo escrito separado.
+
+Arquivos de referência: `LICENSE.md`, `LICENSE-SOFTWARE.md`, `LICENSE-DOCUMENTATION.md` e `COMMERCIAL_LICENSING.md`.
 
 ## Limitação operacional atual
 
