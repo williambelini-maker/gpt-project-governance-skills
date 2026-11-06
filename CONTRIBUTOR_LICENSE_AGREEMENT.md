@@ -103,7 +103,7 @@ The project should not merge Contributions lacking recorded affirmative acceptan
 
 If a provision of this agreement is unenforceable in a particular jurisdiction, it should be interpreted to the maximum extent permitted without invalidating the remaining provisions where applicable.
 
-No governing law or exclusive forum is selected in this repository-level CLA until the Project Licensor expressly declares one in `LEGAL_READINESS.md` or in a later version of this agreement.
+No repository-wide governing law or exclusive forum is selected in advance. If a dispute arises, the Project Licensor may determine the governing-law and forum position it wishes to assert for that specific matter, subject to mandatory applicable law, the jurisdiction of competent authorities, and any binding written agreement already in force.
 
 ---
 
