@@ -182,6 +182,22 @@ skills_instalaveis/pacotes/
 
 Os ZIPs são distribuição; as fontes do repositório continuam sendo a referência para evolução e manutenção.
 
+### Distribuição conjunta via plugin
+
+As cinco Skills também podem ser distribuídas juntas pelo plugin portátil:
+
+```text
+plugins/gpt-project-governance/
+```
+
+O marketplace do repositório fica em:
+
+```text
+.agents/plugins/marketplace.json
+```
+
+A fonte editável continua sendo `skills_instalaveis/pacotes/`; a árvore interna do plugin é uma cópia de distribuição e deve ser regenerada a partir dessa fonte. Consulte `DISTRIBUICAO_PLUGIN_GITHUB.md`.
+
 ## Validação epistemológica
 
 Uma das regras mais importantes deste projeto é impedir a propagação de premissas não verificadas.
@@ -427,6 +443,22 @@ skills_instalaveis/pacotes/
 ~~~
 
 ZIP files are distribution artifacts; the repository sources remain the reference for maintenance and evolution.
+
+### Combined plugin distribution
+
+The five Skills can also be distributed together through the portable plugin:
+
+```text
+plugins/gpt-project-governance/
+```
+
+The repository marketplace is:
+
+```text
+.agents/plugins/marketplace.json
+```
+
+The editable source remains `skills_instalaveis/pacotes/`; the plugin's internal Skill tree is a generated distribution copy and must be regenerated from that source. See `DISTRIBUICAO_PLUGIN_GITHUB.md`.
 
 ## Epistemic validation
 
