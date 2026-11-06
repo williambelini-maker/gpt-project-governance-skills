@@ -73,3 +73,25 @@ If a proposed use may be commercial and the applicable license does not clearly 
 ---
 
 This file defines repository-level scope. The canonical third-party license texts control the rights they grant.
+
+
+## 7. Contributions
+
+External contributions are accepted only under the repository contribution process and the `CONTRIBUTOR_LICENSE_AGREEMENT.md`.
+
+The contributor retains ownership of their contribution but grants the Project Licensor the additional rights stated in that agreement, including the rights needed to:
+
+- distribute the contribution under the repository's applicable public licenses;
+- combine it with the project;
+- maintain, modify, and sublicense the project;
+- offer separate commercial licenses covering the incorporated contribution.
+
+A pull request must not be merged unless the contributor has affirmatively accepted the contributor agreement using the repository's PR attestation process.
+
+## 8. Third-party material
+
+The licenses in this repository apply only to material for which the Project Licensor has the necessary rights.
+
+Third-party material, trademarks, quoted material, dependencies, external documentation, and other separately licensed content remain subject to their own applicable terms.
+
+See `THIRD_PARTY_NOTICES.md`.
