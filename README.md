@@ -213,9 +213,21 @@ NO_UNVERIFIED_PREMISE_PROPAGATION_V1
 
 O projeto continua evoluindo a partir de uso real em repositórios e fluxos de trabalho longos.
 
-## Licença
+## Licenciamento
 
-Ainda não foi definida uma licença de reutilização para este repositório.
+Este repositório usa **licenciamento não comercial com licenciamento comercial separado**.
+
+- **Skills operacionais e ativos executáveis/instaláveis**: PolyForm Noncommercial License 1.0.0.
+- **Documentação, metodologia e materiais textuais**: Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0).
+- **Uso comercial não é concedido pelas licenças públicas**. Venda, integração comercial, redistribuição paga, oferta como serviço monetizado ou outro uso comercial exige autorização escrita separada do titular.
+
+Consulte:
+- `LICENSE.md` — mapa de escopo e precedência;
+- `LICENSE-SOFTWARE.md` — aplicação da PolyForm Noncommercial;
+- `LICENSE-DOCUMENTATION.md` — aplicação da CC BY-NC-SA 4.0;
+- `COMMERCIAL_LICENSING.md` — como solicitar direitos comerciais.
+
+Uma licença comercial separada pode envolver royalties, participação, contribuição ao projeto, parceria, pagamento fixo ou outra contrapartida negociada. Nenhuma dessas condições é automática: dependem de acordo escrito específico.
 
 ---
 
@@ -434,6 +446,18 @@ NO_UNVERIFIED_PREMISE_PROPAGATION_V1
 
 The project continues to evolve from real use in repositories and long-running workflows.
 
-## License
+## Licensing
 
-No reuse license has been selected for this repository yet.
+This repository uses **noncommercial public licensing with separate commercial licensing**.
+
+- **Operational Skills and executable/installable assets**: PolyForm Noncommercial License 1.0.0.
+- **Documentation, methodology, and textual materials**: Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0).
+- **Commercial use is not granted by the public licenses**. Sale, commercial integration, paid redistribution, monetized service offerings, or other commercial use requires separate written authorization from the rights holder.
+
+See:
+- `LICENSE.md` — scope and precedence map;
+- `LICENSE-SOFTWARE.md` — PolyForm Noncommercial application;
+- `LICENSE-DOCUMENTATION.md` — CC BY-NC-SA 4.0 application;
+- `COMMERCIAL_LICENSING.md` — how to request commercial rights.
+
+A separate commercial license may involve royalties, participation, project contribution, partnership, a fixed fee, or other negotiated consideration. None of these terms are automatic; they require a specific written agreement.
