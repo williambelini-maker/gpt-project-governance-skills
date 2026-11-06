@@ -184,6 +184,16 @@ Os ZIPs são distribuição; as fontes do repositório continuam sendo a referê
 
 ### Distribuição conjunta via plugin
 
+Para instalação direta pela interface **Criar plugin → Importar** do ChatGPT, use o pacote pronto:
+
+```text
+plugins/releases/gpt-project-governance-0.1.1.zip
+```
+
+O ZIP contém somente `plugin.json` e `skills/`, no formato aceito pelo importador.
+
+
+
 As cinco Skills também podem ser distribuídas juntas pelo plugin portátil:
 
 ```text
