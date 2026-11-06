@@ -68,3 +68,10 @@ Governança, Macro, Modelagem e Engenharia possuem gates explícitos antes de us
 
 
 `EPISTEMIC_ZIPS_REGENERATED = YES`
+
+
+## Licenciamento de distribuição
+
+`BUNDLE_LICENSE_NOTICE = INCLUDED`
+
+Todos os bundles instaláveis carregam `LICENSE.md` interno. O material operacional da Skill é PolyForm Noncommercial 1.0.0; documentação/referências incorporadas preservam a licença documental aplicável definida no mapa de licenciamento do repositório.

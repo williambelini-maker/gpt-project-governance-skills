@@ -6,11 +6,11 @@ Esta é a **pasta de referência para uploads** das Skills instaláveis deste re
 
 ## Arquivos
 
-- `alinhamento-macro-priorizacao.zip` — 5 arquivos no bundle
-- `engenharia-simulacao-sistemas-automacao.zip` — 4 arquivos no bundle
-- `governanca-projetos-continuidade.zip` — 19 arquivos no bundle; governança ampla + validação epistemológica
-- `modelagem-fisico-matematica.zip` — 4 arquivos no bundle
-- `organizacao-higiene-repositorio.zip` — 4 arquivos no bundle
+- `alinhamento-macro-priorizacao.zip` — 6 arquivos no bundle
+- `engenharia-simulacao-sistemas-automacao.zip` — 5 arquivos no bundle
+- `governanca-projetos-continuidade.zip` — 20 arquivos no bundle; governança ampla + validação epistemológica
+- `modelagem-fisico-matematica.zip` — 5 arquivos no bundle
+- `organizacao-higiene-repositorio.zip` — 5 arquivos no bundle
 
 ## Como usar
 
@@ -52,3 +52,10 @@ Os cinco ZIPs desta pasta foram regenerados com esta revisão porque o contrato 
 
 
 `EPISTEMIC_ZIPS_REGENERATED = YES`
+
+
+## Licenciamento dos bundles
+
+Cada ZIP inclui um `LICENSE.md` próprio com o aviso PolyForm Noncommercial 1.0.0 para o material operacional da Skill e preserva a licença aplicável das referências documentais incorporadas.
+
+`BUNDLE_LICENSE_NOTICE = INCLUDED`
