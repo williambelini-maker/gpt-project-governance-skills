@@ -94,10 +94,42 @@ CHANGE_CANONICAL_SKILL
 
 `PLUGIN_FORMAT = AGENT_PLUGINS_1_0_PORTABLE`
 
-`PLUGIN_VERSION = 0.1.0`
+`PLUGIN_VERSION = 0.1.1`
 
 `SKILL_COUNT = 5`
 
 `GITHUB_MARKETPLACE_MANIFEST = READY_LOCAL`
 
 `REMOTE_PUBLICATION = NOT_PERFORMED_IN_THIS_STEP`
+
+
+## Instalação no ChatGPT por Importar
+
+Para a interface pessoal do ChatGPT que oferece `Criar plugin -> Importar`, o artefato oficial é:
+
+`plugins/releases/gpt-project-governance-0.1.1.zip`
+
+O ZIP contém somente o pacote importável:
+
+```text
+plugin.json
+skills/
+  governanca-projetos-continuidade/
+  alinhamento-macro-priorizacao/
+  organizacao-higiene-repositorio/
+  modelagem-fisico-matematica/
+  engenharia-simulacao-sistemas-automacao/
+```
+
+O marketplace GitHub permanece no repositório para superfícies que suportem marketplace, mas não é necessário para o botão `Importar`.
+
+Fluxo de atualização:
+
+```text
+skills_instalaveis/pacotes/
+-> plugins/gpt-project-governance/skills/
+-> VALIDATE
+-> BUILD plugins/releases/gpt-project-governance-<version>.zip
+-> PUBLISH GITHUB
+-> CHATGPT: Criar plugin -> Importar -> selecionar ZIP
+```
