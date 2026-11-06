@@ -178,3 +178,17 @@ NEXT
 ```
 
 Se um agente consegue encontrar o `NEXT` mas não justificar essa cadeia, o cold start está incompleto.
+
+
+## 13. Distribuição de Skills
+
+A distribuição não altera ownership metodológico.
+
+```text
+skills_instalaveis/pacotes/   -> SOURCE
+skills_instalaveis/UPLOADS_CHATGPT/*.zip -> INDIVIDUAL_DISTRIBUTION
+plugins/gpt-project-governance/ -> COMBINED_PLUGIN_DISTRIBUTION
+.agents/plugins/marketplace.json -> PLUGIN_CATALOG
+```
+
+Mudanças de conteúdo nas Skills devem nascer na fonte e propagar para ZIPs/plugin; não devem nascer na cópia do plugin.
