@@ -229,6 +229,17 @@ Consulte:
 
 Uma licença comercial separada pode envolver royalties, participação, contribuição ao projeto, parceria, pagamento fixo ou outra contrapartida negociada. Nenhuma dessas condições é automática: dependem de acordo escrito específico.
 
+### Contribuições e direitos comerciais futuros
+
+Contribuições externas só devem ser incorporadas após aceite explícito do `CONTRIBUTOR_LICENSE_AGREEMENT.md`. Esse acordo preserva a autoria do contribuidor, mas concede ao mantenedor direitos suficientes para continuar distribuindo o projeto sob as licenças públicas e também negociar licenças comerciais separadas sobre a contribuição incorporada.
+
+Consulte também:
+- `CONTRIBUTING.md`;
+- `CONTRIBUTOR_LICENSE_AGREEMENT.md`;
+- `COMMERCIAL_LICENSE_TEMPLATE.md`;
+- `LEGAL_READINESS.md`;
+- `THIRD_PARTY_NOTICES.md`.
+
 ---
 
 # English
@@ -461,3 +472,14 @@ See:
 - `COMMERCIAL_LICENSING.md` — how to request commercial rights.
 
 A separate commercial license may involve royalties, participation, project contribution, partnership, a fixed fee, or other negotiated consideration. None of these terms are automatic; they require a specific written agreement.
+
+### Contributions and future commercial rights
+
+External contributions should only be incorporated after explicit acceptance of `CONTRIBUTOR_LICENSE_AGREEMENT.md`. Contributors retain authorship/ownership of their contributions, while granting the maintainer sufficient rights to continue public distribution and to negotiate separate commercial licenses covering incorporated contributions.
+
+See also:
+- `CONTRIBUTING.md`;
+- `CONTRIBUTOR_LICENSE_AGREEMENT.md`;
+- `COMMERCIAL_LICENSE_TEMPLATE.md`;
+- `LEGAL_READINESS.md`;
+- `THIRD_PARTY_NOTICES.md`.
