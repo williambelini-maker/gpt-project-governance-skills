@@ -1,6 +1,6 @@
 # GPT Project Governance Skills
 
-Sistema aberto de **governança operacional, continuidade, validação de evidências, organização de repositórios e skills reutilizáveis para trabalho com GPTs/agentes**.
+Sistema público e **source-available** de governança operacional, continuidade, validação de evidências, organização de repositórios e skills reutilizáveis para trabalho com GPTs/agentes.
 
 Este repositório nasceu de um problema prático: em projetos longos, um agente pode perder contexto entre chats, confundir documentação histórica com estado atual, aprofundar uma frente sem verificar se ela ainda é prioridade ou transformar uma hipótese plausível em premissa sem validar os dados.
 
@@ -217,6 +217,8 @@ O projeto continua evoluindo a partir de uso real em repositórios e fluxos de t
 
 Este repositório usa **licenciamento não comercial com licenciamento comercial separado**.
 
+Por restringir uso comercial, este projeto é **source-available**, não “Open Source” no sentido da Open Source Initiative (OSI).
+
 - **Skills operacionais e ativos executáveis/instaláveis**: PolyForm Noncommercial License 1.0.0.
 - **Documentação, metodologia e materiais textuais**: Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0).
 - **Uso comercial não é concedido pelas licenças públicas**. Venda, integração comercial, redistribuição paga, oferta como serviço monetizado ou outro uso comercial exige autorização escrita separada do titular.
@@ -244,7 +246,7 @@ Consulte também:
 
 # English
 
-An open system for **operational governance, continuity, evidence validation, repository organization, and reusable skills for GPT/agent-assisted work**.
+A public, **source-available** system for operational governance, continuity, evidence validation, repository organization, and reusable skills for GPT/agent-assisted work.
 
 This repository grew out of a practical problem: in long-running projects, an agent may lose context between chats, confuse historical documentation with current state, deepen a workstream without checking whether it is still the right priority, or turn a plausible hypothesis into an operational premise without validating the data.
 
@@ -460,6 +462,8 @@ The project continues to evolve from real use in repositories and long-running w
 ## Licensing
 
 This repository uses **noncommercial public licensing with separate commercial licensing**.
+
+Because commercial use is restricted, this project is **source-available**, not “Open Source” under the Open Source Initiative (OSI) definition.
 
 - **Operational Skills and executable/installable assets**: PolyForm Noncommercial License 1.0.0.
 - **Documentation, methodology, and textual materials**: Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0).
