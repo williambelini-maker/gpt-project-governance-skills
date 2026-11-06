@@ -49,3 +49,14 @@ A request should identify:
 Discussion, evaluation, a pull request, an issue, contribution, or informal conversation does not grant commercial rights.
 
 Commercial authorization requires a separate written agreement.
+
+
+## Commercial agreement template
+
+A non-binding drafting template is available at `COMMERCIAL_LICENSE_TEMPLATE.md`.
+
+It does not grant rights by itself. Commercial rights arise only from a completed written agreement accepted by the relevant parties.
+
+## Contributions
+
+Commercial licensing of incorporated external contributions depends on contributors having accepted `CONTRIBUTOR_LICENSE_AGREEMENT.md`. Contributions that do not satisfy the repository contribution policy must not be merged into commercially licensable project history.
