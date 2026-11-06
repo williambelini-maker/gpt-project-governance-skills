@@ -1,0 +1,15 @@
+{
+  "name": "gpt-project-governance-marketplace",
+  "interface": {
+    "displayName": "GPT Project Governance"
+  },
+  "plugins": [
+    {
+      "name": "gpt-project-governance",
+      "source": {
+        "source": "local",
+        "path": "./plugins/gpt-project-governance"
+      }
+    }
+  ]
+}
