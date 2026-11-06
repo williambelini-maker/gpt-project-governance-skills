@@ -10,6 +10,7 @@ Artefatos prontos para `ChatGPT -> Criar plugin -> Importar`.
 - conteúdo: `plugin.json` + `skills/`
 - SHA-256: `d3ee8ffc4bfff87aee362713e4778c815360fb91178243b57410d0596869d09a`
 - tamanho: `169742` bytes
+- Git commit: `949c4943757c41128600215e9681893ae06be5d7`
 - MCP: não incluído
 - marketplace: não incluído no ZIP
 
