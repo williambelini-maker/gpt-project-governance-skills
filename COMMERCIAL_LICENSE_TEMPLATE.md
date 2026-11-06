@@ -160,11 +160,13 @@ Export control, sanctions, privacy, consumer, sector-specific, or AI-related obl
 
 ## 16. Governing law and dispute forum
 
-**Governing law:** <REQUIRED BEFORE SIGNING>
+There is no repository-wide advance choice of governing law or forum.
 
-**Courts / arbitration / venue:** <REQUIRED BEFORE SIGNING>
+For a specific commercial agreement, the parties may expressly select governing law, courts, arbitration, venue, and controlling language. If the signed agreement remains silent and a dispute later arises, the Licensor may determine the governing-law and forum position it wishes to assert at that time, subject to mandatory applicable law and the authority of the competent court, tribunal, or arbitrator.
 
-**Language controlling in case of conflict:** <define>
+**Specific agreement choice, if any:** <optional>
+
+**Language controlling in case of conflict:** <define if needed>
 
 ## 17. Assignment
 
