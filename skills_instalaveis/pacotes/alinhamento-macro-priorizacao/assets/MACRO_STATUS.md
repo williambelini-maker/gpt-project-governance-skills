@@ -1,0 +1,11 @@
+# Estado macro atual
+
+`MACRO_OBJECTIVE = <objetivo>`
+`CURRENT_MACRO_THESIS = <estado>`
+`DOMINANT_MACRO_BLOCKER = <blocker ou NONE>`
+`CURRENT_PRIORITY_FRONT = <frente>`
+`WHY_THIS_FRONT_NOW = <razão>`
+`DECISION_AFFECTED = <decisão>`
+`EXPECTED_INFORMATION_OR_CAPABILITY = <esperado>`
+`EXPECTED_MACRO_EFFECT = <efeito>`
+`STOP_OR_REPRIORITIZATION_TRIGGERS = <condições>`

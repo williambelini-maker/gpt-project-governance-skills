@@ -1,0 +1,26 @@
+# OS / editors
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Local environments / secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Runtime/cache
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.cache/
+tmp/
+temp/
+
+# Local build/staging
+MCP_OUTPUTS/
+outputs/
