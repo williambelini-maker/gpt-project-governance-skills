@@ -1,12 +1,14 @@
-# Legal Readiness
+# Legal Position
 
-`DOCUMENT_ROLE = LEGAL_CONFIGURATION_STATE`
+`DOCUMENT_ROLE = LEGAL_POLICY_STATE`
 
-This document separates what is already configured from what cannot be safely inferred.
+This document records the legal posture of the repository. It intentionally does **not** preselect one universal jurisdiction, forum, commercial entity structure, or dispute mechanism for every future situation.
 
-## Configured
+## Current legal posture
 
 `PUBLIC_REPOSITORY = YES`
+
+`SOURCE_AVAILABLE = YES`
 
 `PUBLIC_COMMERCIAL_PERMISSION = NO`
 
@@ -24,49 +26,43 @@ This document separates what is already configured from what cannot be safely in
 
 `COMMERCIAL_LICENSE_TEMPLATE = AVAILABLE`
 
-## Critical unresolved legal variables
+## Case-by-case legal choice
 
-These values must not be guessed.
+The project does not adopt one repository-wide governing law, court, venue, arbitration forum, or commercial structure in advance.
 
-### Rights-holder legal identity
+The governing principle is:
 
-`RIGHTS_HOLDER_LEGAL_NAME = UNSET`
+~~~text
+NO_UNIVERSAL_ADVANCE_JURISDICTION_SELECTION
 
-Current public copyright identifier:
+IF SPECIFIC_SIGNED_AGREEMENT_EXISTS
+    -> FOLLOW THAT AGREEMENT TO THE EXTENT LEGALLY EFFECTIVE
+ELSE IF DISPUTE_OR_FORMAL_ENFORCEMENT_ARISES
+    -> RIGHTS_HOLDER_SELECTS_THE_POSITION_TO_ASSERT
+    -> SUBJECT_TO_MANDATORY_APPLICABLE_LAW
+    -> SUBJECT_TO_COMPETENT_AUTHORITY
+~~~
 
-`PUBLIC_RIGHTS_HOLDER_IDENTIFIER = williambelini-maker`
+In practical terms, the rights holder decides how to frame the legal position when a concrete problem exists instead of locking the entire project today to one jurisdiction or forum that may be unsuitable for a future counterparty or dispute.
 
-For commercial contracts, invoices, enforcement, and formal notices, replace or supplement the public identifier with the actual legal person or legal entity that owns the rights.
+This is a **reservation of decision**, not a guarantee that a unilateral forum or governing-law preference will always control. Mandatory law, jurisdiction rules, and any binding agreement can limit that choice.
 
-### Commercial contact
+## Commercial agreements
 
-`PRIVATE_COMMERCIAL_CONTACT = UNSET`
+A commercial agreement may define any combination of:
 
-Until configured, `COMMERCIAL_LICENSING.md` directs interested parties to request a private contact channel through GitHub without posting confidential information publicly.
+- governing law;
+- court or arbitration forum;
+- venue;
+- controlling language;
+- commercial licensor identity;
+- payment and invoicing arrangements;
+- royalties, revenue share, participation, or fixed fees;
+- support and maintenance;
+- liability allocation;
+- termination and enforcement terms.
 
-### Governing law
-
-`GOVERNING_LAW = UNSET`
-
-### Exclusive forum / dispute mechanism
-
-`DISPUTE_FORUM = UNSET`
-
-No country, state, court, or arbitration forum should be inferred from repository location, user location, GitHub account location, server location, or language.
-
-### Business/entity structure
-
-`COMMERCIAL_LICENSOR_ENTITY = UNSET`
-
-If commercial licensing becomes material, decide whether contracts are signed by the individual rights holder or by a legal entity that validly owns or licenses the relevant IP.
-
-### Tax and invoicing configuration
-
-`TAX_RESIDENCY_FOR_COMMERCIAL_LICENSING = UNSET`
-
-`INVOICING_ENTITY = UNSET`
-
-These are intentionally not inferred.
+Those choices are made for the concrete transaction rather than globally for the repository.
 
 ## Contribution-chain requirement
 
@@ -80,33 +76,32 @@ LICENSE_PROVENANCE_CLEAR?
 -> ONLY_THEN MERGE
 ~~~
 
-This matters because the project intends to preserve the ability to offer separate commercial licenses. A contribution that enters without sufficient inbound rights can create a rights gap.
+This preserves the project's ability to maintain the public licensing model and separately negotiate commercial rights.
 
 ## Commercial-deal gate
 
-Before signing a commercial license:
+Before granting commercial rights:
 
 ~~~text
-RIGHTS_HOLDER_LEGAL_NAME SET
-COMMERCIAL_CONTACT SET
 LICENSED_MATERIALS IDENTIFIED BY COMMIT/TAG
 COMMERCIAL_SCOPE DEFINED
 ECONOMIC_TERMS DEFINED
-GOVERNING_LAW SET
-DISPUTE_FORUM SET
 SIGNING_AUTHORITY CONFIRMED
 THIRD_PARTY_EXCLUSIONS REVIEWED
+CASE_SPECIFIC_LEGAL_TERMS CHOSEN_IF_NEEDED
 -> READY_TO_SIGN
 ~~~
 
 ## Review trigger
 
-Revisit this file when:
+Revisit this legal posture when a concrete event requires it, such as:
 
-- the first external contributor appears;
-- the first commercial licensing inquiry appears;
-- a company/entity is formed or becomes the IP holder;
-- a trademark or logo is adopted;
-- third-party dependencies or substantial external content are added;
-- commercial activity crosses jurisdictions;
-- revenue, royalties, equity, or material contractual liability becomes significant.
+- an external contribution;
+- a commercial licensing negotiation;
+- a dispute or enforcement question;
+- adoption of a trademark or brand asset;
+- addition of material third-party content;
+- a transaction spanning multiple jurisdictions;
+- royalties, equity, revenue share, or material contractual liability.
+
+The repository intentionally keeps case-specific legal choices open until there is an actual case that justifies choosing them.
