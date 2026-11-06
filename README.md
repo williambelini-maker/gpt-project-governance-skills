@@ -1,535 +1,182 @@
-# GPT Project Governance Skills
+# GPT Project Toolkit
 
-Sistema público e **source-available** de governança operacional, continuidade, validação de evidências, organização de repositórios e skills reutilizáveis para trabalho com GPTs/agentes.
+Toolkit de **5 Skills coordenadas para ChatGPT/agentes** cobrindo continuidade de projetos, priorização, organização de repositórios, modelagem físico-matemática e engenharia de sistemas/simulação.
 
-Este repositório nasceu de um problema prático: em projetos longos, um agente pode perder contexto entre chats, confundir documentação histórica com estado atual, aprofundar uma frente sem verificar se ela ainda é prioridade ou transformar uma hipótese plausível em premissa sem validar os dados.
+O toolkit não impõe uma Skill padrão. A tarefa determina qual capacidade deve ser usada.
 
-O objetivo deste projeto é tornar esse tipo de trabalho **retomável, auditável e epistemicamente disciplinado**, sem transformar documentação em burocracia.
+```text
+USER TASK
+-> identify relevant capability
+-> load only the relevant Skill(s)
+-> execute within each Skill's scope
+```
 
-> **Princípio central:** inferência pode gerar uma hipótese; não pode promovê-la silenciosamente a verdade.
+## Skills
 
-~~~text
+| Skill | Use quando |
+|---|---|
+| `governanca-projetos-continuidade` | o trabalho depende do estado de um projeto/repositório existente, owners, contexto, continuidade ou handoff |
+| `alinhamento-macro-priorizacao` | é preciso escolher entre frentes, hipóteses, experimentos ou investigações |
+| `organizacao-higiene-repositorio` | é preciso decidir onde arquivos e artefatos devem morar, limpar raiz, separar corrente/histórico/releases |
+| `modelagem-fisico-matematica` | há formulação, derivação, redução ou validação matemática/física material |
+| `engenharia-simulacao-sistemas-automacao` | há arquitetura executável, estados, transições, simulação, automação, agentes ou robustez |
+
+As Skills podem ser combinadas quando cada uma atua no próprio eixo de decisão.
+
+## Instalação no ChatGPT
+
+Para instalar as cinco Skills juntas:
+
+```text
+plugins/releases/gpt-project-toolkit-0.2.1.zip
+```
+
+No ChatGPT:
+
+```text
+Criar plugin
+-> Importar
+-> selecionar gpt-project-toolkit-0.2.1.zip
+```
+
+O pacote contém somente:
+
+```text
+plugin.json
+skills/
+  alinhamento-macro-priorizacao/
+  engenharia-simulacao-sistemas-automacao/
+  governanca-projetos-continuidade/
+  modelagem-fisico-matematica/
+  organizacao-higiene-repositorio/
+```
+
+Para instalar Skills individualmente, consulte `skills_instalaveis/UPLOADS_CHATGPT/`.
+
+## Como funciona
+
+Você não precisa chamar uma Skill pelo nome. O host pode selecionar a Skill adequada pelo gatilho descrito no `SKILL.md`.
+
+Exemplos:
+
+```text
+"continue este projeto"
+-> governanca-projetos-continuidade
+
+"qual dessas frentes vale atacar primeiro?"
+-> alinhamento-macro-priorizacao
+
+"organize este repositório"
+-> organizacao-higiene-repositorio
+
+"derive e valide este modelo"
+-> modelagem-fisico-matematica
+
+"projete e simule este sistema"
+-> engenharia-simulacao-sistemas-automacao
+```
+
+O agregador `GPT Project Toolkit` não transforma governança em comportamento padrão.
+
+## Fonte e distribuição
+
+```text
+skills_instalaveis/pacotes/
+        |
+        | fonte editável das Skills
+        v
+plugins/gpt-project-toolkit/skills/
+        |
+        | distribuição conjunta
+        v
+plugins/releases/gpt-project-toolkit-<version>.zip
+```
+
+- fonte editável: `skills_instalaveis/pacotes/`
+- plugin: `plugins/gpt-project-toolkit/`
+- release atual: `plugins/releases/gpt-project-toolkit-0.2.1.zip`
+- marketplace: `.agents/plugins/marketplace.json`
+- distribuição individual: `skills_instalaveis/UPLOADS_CHATGPT/`
+
+## Estrutura principal
+
+```text
+.
+├── plugins/
+│   ├── gpt-project-toolkit/
+│   └── releases/
+├── skills_instalaveis/
+│   ├── pacotes/
+│   └── UPLOADS_CHATGPT/
+├── skills/
+├── templates/
+├── FUNDAMENTOS/
+├── NOVO_CHAT/
+├── legal/
+├── LICENSE.md
+├── CONTRIBUTING.md
+└── README.md
+```
+
+## Coordenação entre Skills
+
+Cada Skill possui ownership distinto:
+
+```text
+governança/continuidade -> contexto, owners, estado e handoff
+priorização            -> qual frente e por quê agora
+organização            -> onde artefatos moram
+modelagem              -> formulação, redução e validação matemática/física
+engenharia             -> arquitetura executável, simulação e automação
+```
+
+Instrução explícita do usuário, contratos e evidência do projeto prevalecem sobre heurísticas genéricas.
+
+## Princípio epistemológico comum
+
+As cinco Skills compartilham uma regra:
+
+```text
 INFERENCE_CAN_CREATE_A_HYPOTHESIS
 INFERENCE_CANNOT_PROMOTE_IT_TO_TRUTH
 NO_UNVERIFIED_PREMISE_PROPAGATION = TRUE
-~~~
-
-## O que este projeto resolve
-
-O sistema foi desenhado para reduzir falhas recorrentes em trabalho assistido por agentes, como:
-
-- continuar um projeto sem reconstruir o estado global;
-- tratar o NEXT herdado como ordem autojustificada;
-- otimizar uma frente local que já perdeu valor macro;
-- escolher uma “fonte da verdade” apenas pelo nome ou data do arquivo;
-- repetir hipóteses até que pareçam fatos;
-- priorizar ou implementar com base em premissas não verificadas;
-- misturar artefatos humanos, outputs, logs, dados e versões no mesmo lugar;
-- perder decisões, blockers, evidências e critérios de parada entre chats;
-- recriar buscas, derivações ou ativos que já existiam.
-
-A proposta não é obrigar todos os projetos a usar a mesma árvore documental. A proposta é fornecer **princípios, gates, owners, templates e skills composáveis** que podem ser adotados de forma proporcional à complexidade real do projeto.
-
-## Princípios fundamentais
-
-### 1. Evidência antes de premissa
-
-Claims materiais usam estados epistemológicos explícitos:
-
-~~~text
-UNKNOWN
-HYPOTHESIS
-SUPPORTED
-VERIFIED
-FALSIFIED
-CONFLICT
-~~~
-
-Se uma decisão mudaria caso uma hipótese estivesse errada, a hipótese deve ser investigada antes de sustentar a decisão.
-
-~~~text
-HYPOTHESIS
--> VALIDATION PLAN
--> INVESTIGATION
--> EVIDENCE
--> STATUS UPDATE
--> DECISION
-~~~
-
-### 2. Estado macro antes de aprofundamento local
-
-Uma próxima ação só é válida enquanto sua justificativa continua válida.
-
-~~~text
-MACRO OBJECTIVE
--> CURRENT MACRO STATE
--> RELEVANT FRONTS
--> WHY THIS FRONT NOW
--> EXPECTED MACRO EFFECT
--> STOP / REPRIORITIZATION TRIGGER
--> LOCAL STATUS
--> NEXT
-~~~
-
-### 3. Uma verdade viva por assunto
-
-Conversa, histórico e arquivos duplicados não devem competir como owners do estado atual.
-
-O projeto separa estado estratégico, estado operacional, contratos vigentes, evidência, histórico, arquitetura, estrutura física e conhecimento reutilizável.
-
-### 4. Continuidade sem depender da memória do chat
-
-Um novo agente deve conseguir reconstruir pelo repositório:
-
-- objetivo macro;
-- estado atual;
-- frente prioritária;
-- por que ela é prioritária;
-- premissas materiais e evidências;
-- blockers;
-- critérios de parada/repriorização;
-- próxima ação;
-- localização dos owners e artefatos relevantes.
-
-### 5. Organização física é parte da governança
-
-A raiz do repositório é tratada como espaço curado.
-
-~~~text
-FUNCTION / ACCESS
--> SUBJECT / DOMAIN
--> LIFECYCLE / VERSION
--> FILE TYPE when useful
-~~~
-
-Arquivos são organizados primeiro por função, acesso e ciclo de vida — não simplesmente por extensão.
-
-### 6. Redução antes de força bruta
-
-Quando o problema permite estrutura analítica, matemática ou algorítmica, ela deve ser explorada antes de sweeps, buscas extensas ou computação pesada.
-
-## Skills incluídas
-
-O repositório contém atualmente cinco bundles instaláveis e coordenados:
-
-| Skill | Responsabilidade principal |
-|---|---|
-| governanca-projetos-continuidade | contexto do projeto, owners, fonte da verdade, cold start, propagação e handoff |
-| alinhamento-macro-priorizacao | escolha de frente, valor de informação, blockers, stop e repriorização |
-| organizacao-higiene-repositorio | localização física, ciclo de vida, raiz, releases e organização de artefatos |
-| modelagem-fisico-matematica | formulação, redução, derivação e validação matemática/física |
-| engenharia-simulacao-sistemas-automacao | arquitetura executável, estados, transições, simulação, automação e robustez |
-
-As skills podem atuar juntas. Elas não dependem de uma prioridade numérica artificial; cada uma possui **ownership de decisão** em um eixo diferente.
-
-A precedência conceitual usada pelo sistema é:
-
-~~~text
-EXPLICIT USER INSTRUCTION
-> PROJECT CONTRACT / OWNERS / EVIDENCE
-> GOVERNANCE AND CONTINUITY
-> MACRO ALIGNMENT
-> REPOSITORY ORGANIZATION
-> DOMAIN SKILL
-> GENERIC HEURISTIC
-~~~
-
-## Estrutura do repositório
-
-~~~text
-.
-├── FUNDAMENTOS/
-│   └── README.md
-├── NOVO_CHAT/
-│   └── README.md
-├── skills/
-│   ├── README.md
-│   └── references/
-├── templates/
-├── skills_instalaveis/
-│   ├── pacotes/
-│   ├── UPLOADS_CHATGPT/
-│   ├── ROTEAMENTO_E_PRECEDENCIA.md
-│   └── MANIFESTO_DISTRIBUICAO.md
-├── POLITICA_DOCUMENTAL.md
-├── POLITICA_ESTRUTURA_REPOSITORIO.md
-├── POLITICA_VALIDACAO_PREMISSAS_E_EVIDENCIA.md
-├── MAPA_DOCUMENTAL.md
-├── MATRIZ_FONTE_DA_VERDADE.md
-└── PROTOCOLO_ATUALIZACAO_E_HANDOFF.md
-~~~
-
-## Como usar
-
-Para compreender a metodologia, comece por:
-
-1. FUNDAMENTOS/README.md
-2. POLITICA_VALIDACAO_PREMISSAS_E_EVIDENCIA.md
-3. NOVO_CHAT/README.md
-4. skills/README.md
-
-Para instalar as Skills já empacotadas, use os ZIPs de:
-
-~~~text
-skills_instalaveis/UPLOADS_CHATGPT/
-~~~
-
-Cada ZIP corresponde a uma Skill individual. Os diretórios editáveis que originam esses artefatos ficam em:
-
-~~~text
-skills_instalaveis/pacotes/
-~~~
-
-Os ZIPs são distribuição; as fontes do repositório continuam sendo a referência para evolução e manutenção.
-
-### Distribuição conjunta via plugin — GPT Project Toolkit
-
-Para instalação direta pela interface **Criar plugin → Importar** do ChatGPT, use o pacote pronto:
-
-```text
-plugins/releases/gpt-project-toolkit-0.2.0.zip
 ```
 
-O ZIP contém somente `plugin.json` e `skills/`, no formato aceito pelo importador.
-
-O plugin agregador não possui Skill padrão. Ele seleciona as Skills pela natureza da tarefa; governança é uma das cinco capacidades, não o comportamento principal do toolkit.
-
-
-
-As cinco Skills também podem ser distribuídas juntas pelo plugin portátil:
-
-```text
-plugins/gpt-project-toolkit/
-```
-
-O marketplace do repositório fica em:
-
-```text
-.agents/plugins/marketplace.json
-```
-
-A fonte editável continua sendo `skills_instalaveis/pacotes/`; a árvore interna do plugin é uma cópia de distribuição e deve ser regenerada a partir dessa fonte. Consulte `DISTRIBUICAO_PLUGIN_GITHUB.md`.
-
-## Validação epistemológica
-
-Uma das regras mais importantes deste projeto é impedir a propagação de premissas não verificadas.
-
-Antes de uma claim material sustentar prioridade, diagnóstico, arquitetura, implementação ou conclusão:
-
-~~~text
-HYPOTHESIS_VALIDATION_GATE
-
-WHAT_CLAIM_IS_BEING_USED?
-WHAT_IS_ITS_EPISTEMIC_STATUS?
-WHAT_EVIDENCE_SUPPORTS_IT?
-WHAT_SOURCE_OR_TEST_PROVES_IT?
-WHAT_DECISION_DEPENDS_ON_IT?
-WOULD_THE_DECISION_CHANGE_IF_FALSE?
-~~~
-
-Se a resposta depende materialmente de algo ainda classificado como UNKNOWN, HYPOTHESIS ou CONFLICT, a investigação deve preceder a decisão.
-
-## Estado do projeto
-
-Os bundles instaláveis estão preparados em skills_instalaveis/.
-
-A revisão epistemológica atual é:
-
-~~~text
-NO_UNVERIFIED_PREMISE_PROPAGATION_V1
-~~~
-
-O projeto continua evoluindo a partir de uso real em repositórios e fluxos de trabalho longos.
+Isso não significa que toda tarefa seja de governança; é apenas uma regra de qualidade comum às Skills quando decisões dependem de claims materiais.
 
 ## Licenciamento
 
-Este repositório usa **licenciamento não comercial com licenciamento comercial separado**.
+Este projeto é **source-available** e usa licenciamento público não comercial com possibilidade de licenciamento comercial separado.
 
-Por restringir uso comercial, este projeto é **source-available**, não “Open Source” no sentido da Open Source Initiative (OSI).
+- Skills operacionais e ativos instaláveis: **PolyForm Noncommercial 1.0.0**
+- documentação e metodologia: **CC BY-NC-SA 4.0**
+- uso comercial: somente conforme licença aplicável ou acordo escrito separado
 
-- **Skills operacionais e ativos executáveis/instaláveis**: PolyForm Noncommercial License 1.0.0.
-- **Documentação, metodologia e materiais textuais**: Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0).
-- **Uso comercial não é concedido pelas licenças públicas**. Venda, integração comercial, redistribuição paga, oferta como serviço monetizado ou outro uso comercial exige autorização escrita separada do titular.
+Entrada legal:
 
-Consulte:
-- `LICENSE.md` — mapa de escopo e precedência;
-- `LICENSE-SOFTWARE.md` — aplicação da PolyForm Noncommercial;
-- `LICENSE-DOCUMENTATION.md` — aplicação da CC BY-NC-SA 4.0;
-- `COMMERCIAL_LICENSING.md` — como solicitar direitos comerciais.
+- `LICENSE.md` — mapa de escopo
+- `legal/README.md` — índice jurídico completo
+- `legal/COMMERCIAL_LICENSING.md` — licenciamento comercial
+- `CONTRIBUTING.md` — regras de contribuição
 
-Uma licença comercial separada pode envolver royalties, participação, contribuição ao projeto, parceria, pagamento fixo ou outra contrapartida negociada. Nenhuma dessas condições é automática: dependem de acordo escrito específico.
+## Repositório
 
-### Contribuições e direitos comerciais futuros
-
-Contribuições externas só devem ser incorporadas após aceite explícito do `CONTRIBUTOR_LICENSE_AGREEMENT.md`. Esse acordo preserva a autoria do contribuidor, mas concede ao mantenedor direitos suficientes para continuar distribuindo o projeto sob as licenças públicas e também negociar licenças comerciais separadas sobre a contribuição incorporada.
-
-Consulte também:
-- `CONTRIBUTING.md`;
-- `CONTRIBUTOR_LICENSE_AGREEMENT.md`;
-- `COMMERCIAL_LICENSE_TEMPLATE.md`;
-- `LEGAL_READINESS.md`;
-- `THIRD_PARTY_NOTICES.md`.
+O nome histórico do repositório remoto é `gpt-project-governance-skills`. O produto distribuído atualmente é **GPT Project Toolkit**.
 
 ---
 
 # English
 
-A public, **source-available** system for operational governance, continuity, evidence validation, repository organization, and reusable skills for GPT/agent-assisted work.
+**GPT Project Toolkit** is a coordinated set of five installable Skills for project continuity, prioritization, repository organization, physical/mathematical modeling, and engineering/simulation/automation.
 
-This repository grew out of a practical problem: in long-running projects, an agent may lose context between chats, confuse historical documentation with current state, deepen a workstream without checking whether it is still the right priority, or turn a plausible hypothesis into an operational premise without validating the data.
+There is **no default Skill**. The task determines which capability is loaded.
 
-The goal of this project is to make that work **resumable, auditable, and epistemically disciplined** without turning documentation into bureaucracy.
-
-> **Core principle:** inference may create a hypothesis; it may not silently promote it to truth.
-
-~~~text
-INFERENCE_CAN_CREATE_A_HYPOTHESIS
-INFERENCE_CANNOT_PROMOTE_IT_TO_TRUTH
-NO_UNVERIFIED_PREMISE_PROPAGATION = TRUE
-~~~
-
-## What this project addresses
-
-The system is designed to reduce recurring failures in agent-assisted work, such as:
-
-- continuing a project without reconstructing the global state;
-- treating an inherited NEXT as self-justifying;
-- optimizing a local workstream that no longer has macro value;
-- selecting a “source of truth” only because of a filename or modification date;
-- repeating hypotheses until they begin to look like facts;
-- prioritizing or implementing based on unverified premises;
-- mixing human-facing deliverables, outputs, logs, data, and versions in the same place;
-- losing decisions, blockers, evidence, and stop criteria between chats;
-- recreating searches, derivations, or reusable assets that already exist.
-
-The proposal is not to force every project into the same documentation tree. It is to provide **principles, gates, owners, templates, and composable skills** that can be adopted in proportion to the real complexity of a project.
-
-## Fundamental principles
-
-### 1. Evidence before premise
-
-Material claims use explicit epistemic states:
-
-~~~text
-UNKNOWN
-HYPOTHESIS
-SUPPORTED
-VERIFIED
-FALSIFIED
-CONFLICT
-~~~
-
-If a decision would change when a hypothesis is false, that hypothesis must be investigated before it is allowed to support the decision.
-
-~~~text
-HYPOTHESIS
--> VALIDATION PLAN
--> INVESTIGATION
--> EVIDENCE
--> STATUS UPDATE
--> DECISION
-~~~
-
-### 2. Macro state before local depth
-
-A next action remains valid only while its justification remains valid.
-
-~~~text
-MACRO OBJECTIVE
--> CURRENT MACRO STATE
--> RELEVANT FRONTS
--> WHY THIS FRONT NOW
--> EXPECTED MACRO EFFECT
--> STOP / REPRIORITIZATION TRIGGER
--> LOCAL STATUS
--> NEXT
-~~~
-
-### 3. One live truth owner per subject
-
-Conversation history, historical records, and duplicated files should not compete as owners of current state.
-
-The project distinguishes strategic state, operational state, active contracts, evidence, history, architecture, physical repository structure, and reusable knowledge.
-
-### 4. Continuity without relying on chat memory
-
-A new agent should be able to reconstruct from the repository:
-
-- the macro objective;
-- current state;
-- the priority workstream;
-- why it is the priority;
-- material premises and supporting evidence;
-- blockers;
-- stop/reprioritization criteria;
-- the next action;
-- the location of relevant owners and artifacts.
-
-### 5. Physical organization is part of governance
-
-The repository root is treated as a curated space.
-
-~~~text
-FUNCTION / ACCESS
--> SUBJECT / DOMAIN
--> LIFECYCLE / VERSION
--> FILE TYPE when useful
-~~~
-
-Files are organized first by function, access, and lifecycle — not simply by extension.
-
-### 6. Reduction before brute force
-
-When a problem has exploitable analytical, mathematical, or algorithmic structure, that structure should be used before large sweeps, broad searches, or expensive computation.
-
-## Included skills
-
-The repository currently contains five coordinated, installable bundles:
-
-| Skill | Primary responsibility |
-|---|---|
-| governanca-projetos-continuidade | project context, owners, source of truth, cold start, propagation, and handoff |
-| alinhamento-macro-priorizacao | workstream selection, value of information, blockers, stop, and reprioritization |
-| organizacao-higiene-repositorio | physical placement, lifecycle, repository root, releases, and artifact organization |
-| modelagem-fisico-matematica | mathematical/physical formulation, reduction, derivation, and validation |
-| engenharia-simulacao-sistemas-automacao | executable architecture, states, transitions, simulation, automation, and robustness |
-
-Skills may operate together. They do not rely on an artificial numeric priority; each one owns a different decision axis.
-
-The conceptual precedence used by the system is:
-
-~~~text
-EXPLICIT USER INSTRUCTION
-> PROJECT CONTRACT / OWNERS / EVIDENCE
-> GOVERNANCE AND CONTINUITY
-> MACRO ALIGNMENT
-> REPOSITORY ORGANIZATION
-> DOMAIN SKILL
-> GENERIC HEURISTIC
-~~~
-
-## Repository structure
-
-~~~text
-.
-├── FUNDAMENTOS/
-│   └── README.md
-├── NOVO_CHAT/
-│   └── README.md
-├── skills/
-│   ├── README.md
-│   └── references/
-├── templates/
-├── skills_instalaveis/
-│   ├── pacotes/
-│   ├── UPLOADS_CHATGPT/
-│   ├── ROTEAMENTO_E_PRECEDENCIA.md
-│   └── MANIFESTO_DISTRIBUICAO.md
-├── POLITICA_DOCUMENTAL.md
-├── POLITICA_ESTRUTURA_REPOSITORIO.md
-├── POLITICA_VALIDACAO_PREMISSAS_E_EVIDENCIA.md
-├── MAPA_DOCUMENTAL.md
-├── MATRIZ_FONTE_DA_VERDADE.md
-└── PROTOCOLO_ATUALIZACAO_E_HANDOFF.md
-~~~
-
-## How to use it
-
-To understand the methodology, start with:
-
-1. FUNDAMENTOS/README.md
-2. POLITICA_VALIDACAO_PREMISSAS_E_EVIDENCIA.md
-3. NOVO_CHAT/README.md
-4. skills/README.md
-
-To install the already packaged Skills, use the ZIP files in:
-
-~~~text
-skills_instalaveis/UPLOADS_CHATGPT/
-~~~
-
-Each ZIP corresponds to one individual Skill. The editable bundle directories that generate those artifacts are in:
-
-~~~text
-skills_instalaveis/pacotes/
-~~~
-
-ZIP files are distribution artifacts; the repository sources remain the reference for maintenance and evolution.
-
-### Combined plugin distribution — GPT Project Toolkit
-
-The five Skills can also be distributed together through the portable plugin:
-
-The aggregator has no default Skill. Skills are selected by the task; governance is one capability among five, not the toolkit's default behavior.
+Current combined ChatGPT package:
 
 ```text
-plugins/gpt-project-toolkit/
+plugins/releases/gpt-project-toolkit-0.2.1.zip
 ```
 
-The repository marketplace is:
+The editable Skill sources live in `skills_instalaveis/pacotes/`; `plugins/gpt-project-toolkit/` is a generated combined distribution.
 
-```text
-.agents/plugins/marketplace.json
-```
-
-The editable source remains `skills_instalaveis/pacotes/`; the plugin's internal Skill tree is a generated distribution copy and must be regenerated from that source. See `DISTRIBUICAO_PLUGIN_GITHUB.md`.
-
-## Epistemic validation
-
-One of the most important rules in this project is preventing the propagation of unverified premises.
-
-Before a material claim is allowed to support prioritization, diagnosis, architecture, implementation, or a conclusion:
-
-~~~text
-HYPOTHESIS_VALIDATION_GATE
-
-WHAT_CLAIM_IS_BEING_USED?
-WHAT_IS_ITS_EPISTEMIC_STATUS?
-WHAT_EVIDENCE_SUPPORTS_IT?
-WHAT_SOURCE_OR_TEST_PROVES_IT?
-WHAT_DECISION_DEPENDS_ON_IT?
-WOULD_THE_DECISION_CHANGE_IF_FALSE?
-~~~
-
-If the answer materially depends on something still classified as UNKNOWN, HYPOTHESIS, or CONFLICT, investigation must precede the decision.
-
-## Project status
-
-The installable bundles are prepared under skills_instalaveis/.
-
-The current epistemic revision is:
-
-~~~text
-NO_UNVERIFIED_PREMISE_PROPAGATION_V1
-~~~
-
-The project continues to evolve from real use in repositories and long-running workflows.
-
-## Licensing
-
-This repository uses **noncommercial public licensing with separate commercial licensing**.
-
-Because commercial use is restricted, this project is **source-available**, not “Open Source” under the Open Source Initiative (OSI) definition.
-
-- **Operational Skills and executable/installable assets**: PolyForm Noncommercial License 1.0.0.
-- **Documentation, methodology, and textual materials**: Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0).
-- **Commercial use is not granted by the public licenses**. Sale, commercial integration, paid redistribution, monetized service offerings, or other commercial use requires separate written authorization from the rights holder.
-
-See:
-- `LICENSE.md` — scope and precedence map;
-- `LICENSE-SOFTWARE.md` — PolyForm Noncommercial application;
-- `LICENSE-DOCUMENTATION.md` — CC BY-NC-SA 4.0 application;
-- `COMMERCIAL_LICENSING.md` — how to request commercial rights.
-
-A separate commercial license may involve royalties, participation, project contribution, partnership, a fixed fee, or other negotiated consideration. None of these terms are automatic; they require a specific written agreement.
-
-### Contributions and future commercial rights
-
-External contributions should only be incorporated after explicit acceptance of `CONTRIBUTOR_LICENSE_AGREEMENT.md`. Contributors retain authorship/ownership of their contributions, while granting the maintainer sufficient rights to continue public distribution and to negotiate separate commercial licenses covering incorporated contributions.
-
-See also:
-- `CONTRIBUTING.md`;
-- `CONTRIBUTOR_LICENSE_AGREEMENT.md`;
-- `COMMERCIAL_LICENSE_TEMPLATE.md`;
-- `LEGAL_READINESS.md`;
-- `THIRD_PARTY_NOTICES.md`.
+Licensing: operational/installable Skill material uses PolyForm Noncommercial 1.0.0; documentation/methodology uses CC BY-NC-SA 4.0. See `LICENSE.md` and `legal/README.md`.

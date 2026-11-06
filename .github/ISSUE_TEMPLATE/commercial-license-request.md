@@ -1,22 +1,13 @@
 ---
-name: Commercial Licensing Request
-about: Request a private contact channel for commercial licensing
+name: Commercial License Request
+about: Request a private channel to discuss commercial licensing for GPT Project Toolkit
 title: "Commercial Licensing Request"
-labels: []
-assignees: []
+labels: licensing
+assignees: ""
 ---
 
-**Do not post confidential, pricing-sensitive, customer, security, or proprietary information in this public issue.**
+I would like to discuss commercial licensing for **GPT Project Toolkit**.
 
-I would like to discuss commercial licensing for GPT Project Governance Skills.
+Please provide a private contact channel.
 
-Organization or individual:
-<public name only>
-
-Material/Skill of interest:
-<brief public description>
-
-General use case:
-<brief non-confidential description>
-
-Please provide or indicate a private contact channel for the detailed commercial discussion.
+Do **not** include confidential business information in this public issue.

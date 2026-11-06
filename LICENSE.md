@@ -2,96 +2,69 @@
 
 Copyright © 2026 williambelini-maker.
 
-This repository is public, but it is **not licensed for unrestricted commercial use**.
+This repository is public and source-available. It is **not licensed for unrestricted commercial use**.
 
-Este repositório é público, mas **não está licenciado para uso comercial irrestrito**.
+Este repositório é público e source-available. Ele **não está licenciado para uso comercial irrestrito**.
 
-## 1. Operational Skills and installable/executable assets
+## Scope map
 
-The following are licensed under the **PolyForm Noncommercial License 1.0.0**:
+### Operational Skills and installable/executable assets
 
-- every file named `SKILL.md`;
-- installable Skill package scaffolding and bundle-specific operational instructions;
-- distributable Skill ZIP archives under `skills_instalaveis/UPLOADS_CHATGPT/`;
-- future source code, scripts, automation, or executable assets unless another license is explicitly declared in the file or directory.
+Covered by **PolyForm Noncommercial License 1.0.0**:
 
-Canonical license:
-https://polyformproject.org/licenses/noncommercial/1.0.0
+- every `SKILL.md`;
+- bundle-specific operational instructions and packaging;
+- installable Skill/plugin archives;
+- source code, scripts, automation, or executable assets unless explicitly licensed otherwise.
 
-See `LICENSE-SOFTWARE.md`.
+Canonical terms: https://polyformproject.org/licenses/noncommercial/1.0.0
 
-## 2. Documentation, methodology, and textual materials
+Details: `legal/LICENSE-SOFTWARE.md`.
 
-Unless a file is covered by section 1 or explicitly declares another license, documentation and methodology are licensed under **Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)**.
+### Documentation and methodology
 
-This includes, in particular:
+Unless covered above or explicitly licensed otherwise, documentation and methodology are covered by **CC BY-NC-SA 4.0**.
 
-- `README.md`;
-- `FUNDAMENTOS/`;
-- `NOVO_CHAT/`;
-- root-level policies, maps, matrices, protocols, guides, and audits;
-- `skills/` methodological documentation except files explicitly classified as operational Skill assets;
-- `templates/` textual templates unless explicitly classified as executable assets;
-- explanatory and reference Markdown files.
+This includes README files, methodological references, policies, maps, protocols, guides, templates, and explanatory Markdown.
 
-Canonical license:
-https://creativecommons.org/licenses/by-nc-sa/4.0/
+Canonical terms: https://creativecommons.org/licenses/by-nc-sa/4.0/
 
-Legal code:
-https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.en
+Details: `legal/LICENSE-DOCUMENTATION.md`.
 
-See `LICENSE-DOCUMENTATION.md`.
+## Mixed packages
 
-## 3. Mixed packages and ZIP archives
+Packaging does not relicense embedded files. A plugin or ZIP may contain materials under both scopes above; each file retains the license of its canonical source.
 
-Packaging does not silently relicense embedded files.
+## Commercial rights
 
-When a ZIP or installable bundle contains copied documentation/reference material, that embedded material retains the license of its canonical source. Bundle-specific `SKILL.md` and operational packaging remain under PolyForm Noncommercial 1.0.0.
+Commercial rights are not granted beyond what an applicable public license expressly permits.
 
-## 4. Commercial rights
+Separate written commercial licensing may be negotiated with the rights holder.
 
-The public licenses above do not grant commercial rights beyond what their own terms expressly permit.
+See `legal/COMMERCIAL_LICENSING.md`.
 
-Commercial licensing is available only through a **separate written agreement** with the rights holder.
+## Contributions
 
-See `COMMERCIAL_LICENSING.md`.
+External contributions are accepted only under `CONTRIBUTING.md` and `legal/CONTRIBUTOR_LICENSE_AGREEMENT.md`.
 
-## 5. Required attribution / notice
+## Third-party material
+
+Repository licenses apply only to material for which the Project Licensor has the necessary rights.
+
+See `legal/THIRD_PARTY_NOTICES.md`.
+
+## Attribution
 
 For PolyForm-covered material:
 
-Required Notice: Copyright © 2026 williambelini-maker. Licensed for permitted noncommercial purposes under PolyForm Noncommercial License 1.0.0. Commercial rights reserved.
+> Copyright © 2026 williambelini-maker. Licensed for permitted noncommercial purposes under PolyForm Noncommercial License 1.0.0. Commercial rights reserved.
 
-For CC-covered material, attribution should identify `williambelini-maker / GPT Project Governance Skills`, link to the repository when practical, link to CC BY-NC-SA 4.0, and indicate modifications when applicable.
+For CC-covered material, a reasonable attribution is:
 
-## 6. No implied commercial permission
+> GPT Project Toolkit — williambelini-maker — CC BY-NC-SA 4.0
 
-Public availability, cloning, forking, downloading, or technical access to the repository does not by itself grant commercial permission.
-
-If a proposed use may be commercial and the applicable license does not clearly authorize it, obtain written authorization before proceeding.
+Link to the repository and indicate modifications when practical and required.
 
 ---
 
-This file defines repository-level scope. The canonical third-party license texts control the rights they grant.
-
-
-## 7. Contributions
-
-External contributions are accepted only under the repository contribution process and the `CONTRIBUTOR_LICENSE_AGREEMENT.md`.
-
-The contributor retains ownership of their contribution but grants the Project Licensor the additional rights stated in that agreement, including the rights needed to:
-
-- distribute the contribution under the repository's applicable public licenses;
-- combine it with the project;
-- maintain, modify, and sublicense the project;
-- offer separate commercial licenses covering the incorporated contribution.
-
-A pull request must not be merged unless the contributor has affirmatively accepted the contributor agreement using the repository's PR attestation process.
-
-## 8. Third-party material
-
-The licenses in this repository apply only to material for which the Project Licensor has the necessary rights.
-
-Third-party material, trademarks, quoted material, dependencies, external documentation, and other separately licensed content remain subject to their own applicable terms.
-
-See `THIRD_PARTY_NOTICES.md`.
+This file is the repository-level licensing map. Canonical third-party license texts control their respective grants.

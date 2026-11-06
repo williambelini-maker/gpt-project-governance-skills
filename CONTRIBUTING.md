@@ -1,71 +1,33 @@
 # Contributing
 
-Contributions are welcome, but this project uses a rights structure designed to preserve both noncommercial public availability and the ability to enter separate commercial licensing agreements.
+Contributions are welcome. This project preserves noncommercial public availability while retaining the ability to negotiate separate commercial licensing.
 
-## Before contributing
-
-Read:
+## Read first
 
 1. `LICENSE.md`
-2. `CONTRIBUTOR_LICENSE_AGREEMENT.md`
-3. `THIRD_PARTY_NOTICES.md`
+2. `legal/CONTRIBUTOR_LICENSE_AGREEMENT.md`
+3. `legal/THIRD_PARTY_NOTICES.md`
 
-## CLA acceptance is required
+## CLA required
 
 A pull request must include affirmative acceptance of the Contributor License Agreement.
 
-The standard pull request template contains the required attestation.
+Do not merge when the CLA is not accepted, contribution authority is unresolved, third-party material is undisclosed, or licensing provenance is unclear.
 
-Do not merge a contribution when:
-
-- the CLA checkbox is not accepted;
-- the contributor states they cannot grant the CLA rights;
-- employer/client ownership is unresolved;
-- third-party material is not identified;
-- licensing provenance is unclear.
-
-## What the CLA does
-
-The contributor keeps ownership of their contribution.
-
-The CLA grants the Project Licensor additional rights needed to:
-
-- distribute the contribution under this repository's public licenses;
-- modify and maintain it;
-- include it in combined works;
-- sublicense and relicense it;
-- offer commercial licenses that include the incorporated contribution.
-
-This is important because ordinary repository licensing alone may not give the project sufficient rights to offer future commercial terms consistently.
+The contributor keeps ownership while granting the additional rights described in the CLA.
 
 ## Third-party material
 
-Do not submit third-party code, documentation, templates, images, datasets, prompts, or other material unless its license is compatible with the intended use and is clearly identified.
-
-For third-party content, include:
-
-- source;
-- author/rightsholder if known;
-- license;
-- relevant URL;
-- whether modifications were made.
+Identify source, rightsholder/author when known, license, URL, and modifications for any third-party material.
 
 ## Confidential information
 
-Do not submit secrets, credentials, personal data, client information, proprietary information, trade secrets, or confidential material.
+Do not submit secrets, credentials, personal data, client information, trade secrets, or other material you are not authorized to disclose.
 
 ## Contribution quality
 
-A contribution should identify:
-
-- purpose;
-- files affected;
-- behavioral or methodological effect;
-- validation performed;
-- licensing provenance when relevant.
+Describe purpose, affected files, behavioral/methodological effect, validation, and licensing provenance when relevant.
 
 ## Commercial discussions
 
-Contribution does not imply commercial participation or compensation.
-
-If a contributor and the Project Licensor want a commercial partnership, revenue share, royalty, employment, co-development, or other economic arrangement, that must be documented separately in writing.
+Contribution does not imply compensation, royalties, revenue share, partnership, employment, or other economic participation. Any such arrangement requires a separate written agreement.
