@@ -133,7 +133,7 @@ Usuários devem substituir a instalação anterior pelo `GPT Project Toolkit` v0
 
 `SKILL_COUNT = 5`
 
-`REMOTE_PUBLICATION = PENDING`
+`REMOTE_PUBLICATION = PUBLISHED`
 
 
 `RELEASE_ZIP = plugins/releases/gpt-project-toolkit-0.2.0.zip`
@@ -141,3 +141,6 @@ Usuários devem substituir a instalação anterior pelo `GPT Project Toolkit` v0
 `RELEASE_ZIP_SHA256 = c0037c3e3bece289fc3c19113ef58e3f837ffa1bfb95c81200e48bfe44104c92`
 
 `RELEASE_ZIP_BYTES = 170028`
+
+
+`RELEASE_GIT_COMMIT = 3b16f95eb1ba0174da96153936c03b5fe7094afe`
