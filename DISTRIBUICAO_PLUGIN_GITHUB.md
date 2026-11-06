@@ -100,7 +100,7 @@ CHANGE_CANONICAL_SKILL
 
 `GITHUB_MARKETPLACE_MANIFEST = READY_LOCAL`
 
-`REMOTE_PUBLICATION = NOT_PERFORMED_IN_THIS_STEP`
+`REMOTE_PUBLICATION = PUBLISHED`
 
 
 ## Instalação no ChatGPT por Importar
@@ -133,3 +133,9 @@ skills_instalaveis/pacotes/
 -> PUBLISH GITHUB
 -> CHATGPT: Criar plugin -> Importar -> selecionar ZIP
 ```
+
+`RELEASE_ZIP = plugins/releases/gpt-project-governance-0.1.1.zip`
+
+`RELEASE_ZIP_SHA256 = d3ee8ffc4bfff87aee362713e4778c815360fb91178243b57410d0596869d09a`
+
+`RELEASE_GIT_COMMIT = 949c4943757c41128600215e9681893ae06be5d7`
