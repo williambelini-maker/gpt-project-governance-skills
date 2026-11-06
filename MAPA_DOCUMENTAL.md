@@ -187,7 +187,7 @@ A distribuição não altera ownership metodológico.
 ```text
 skills_instalaveis/pacotes/   -> SOURCE
 skills_instalaveis/UPLOADS_CHATGPT/*.zip -> INDIVIDUAL_DISTRIBUTION
-plugins/gpt-project-governance/ -> COMBINED_PLUGIN_DISTRIBUTION
+plugins/gpt-project-toolkit/ -> COMBINED_PLUGIN_DISTRIBUTION
 .agents/plugins/marketplace.json -> PLUGIN_CATALOG
 ```
 

@@ -1,14 +1,14 @@
 {
-  "name": "gpt-project-governance-marketplace",
+  "name": "gpt-project-toolkit-marketplace",
   "interface": {
-    "displayName": "GPT Project Governance"
+    "displayName": "GPT Project Toolkit"
   },
   "plugins": [
     {
-      "name": "gpt-project-governance",
+      "name": "gpt-project-toolkit",
       "source": {
         "source": "local",
-        "path": "./plugins/gpt-project-governance"
+        "path": "./plugins/gpt-project-toolkit"
       }
     }
   ]

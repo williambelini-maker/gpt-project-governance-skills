@@ -182,22 +182,24 @@ skills_instalaveis/pacotes/
 
 Os ZIPs são distribuição; as fontes do repositório continuam sendo a referência para evolução e manutenção.
 
-### Distribuição conjunta via plugin
+### Distribuição conjunta via plugin — GPT Project Toolkit
 
 Para instalação direta pela interface **Criar plugin → Importar** do ChatGPT, use o pacote pronto:
 
 ```text
-plugins/releases/gpt-project-governance-0.1.1.zip
+plugins/releases/gpt-project-toolkit-0.2.0.zip
 ```
 
 O ZIP contém somente `plugin.json` e `skills/`, no formato aceito pelo importador.
+
+O plugin agregador não possui Skill padrão. Ele seleciona as Skills pela natureza da tarefa; governança é uma das cinco capacidades, não o comportamento principal do toolkit.
 
 
 
 As cinco Skills também podem ser distribuídas juntas pelo plugin portátil:
 
 ```text
-plugins/gpt-project-governance/
+plugins/gpt-project-toolkit/
 ```
 
 O marketplace do repositório fica em:
@@ -454,12 +456,14 @@ skills_instalaveis/pacotes/
 
 ZIP files are distribution artifacts; the repository sources remain the reference for maintenance and evolution.
 
-### Combined plugin distribution
+### Combined plugin distribution — GPT Project Toolkit
 
 The five Skills can also be distributed together through the portable plugin:
 
+The aggregator has no default Skill. Skills are selected by the task; governance is one capability among five, not the toolkit's default behavior.
+
 ```text
-plugins/gpt-project-governance/
+plugins/gpt-project-toolkit/
 ```
 
 The repository marketplace is:

@@ -1,10 +1,21 @@
-# Distribuição do plugin via GitHub
+# Distribuição do GPT Project Toolkit via GitHub
 
 `DOCUMENT_ROLE = PLUGIN_DISTRIBUTION_GUIDE`
 
 ## Objetivo
 
-Distribuir as cinco Skills como um único plugin sem substituir as fontes canônicas existentes.
+Distribuir as cinco Skills como um único toolkit, sem transformar governança ou qualquer outra Skill em comportamento padrão do agregador.
+
+## Identidade
+
+```text
+PLUGIN_NAME = gpt-project-toolkit
+DISPLAY_NAME = GPT Project Toolkit
+PLUGIN_ROLE = SKILL_AGGREGATOR_ROUTER
+DEFAULT_SKILL = NONE
+ROUTE_BY_TASK = TRUE
+GOVERNANCE_IS_NOT_DEFAULT = TRUE
+```
 
 ## Arquitetura
 
@@ -13,49 +24,55 @@ skills_instalaveis/pacotes/
         |
         | fonte editável
         v
-plugins/gpt-project-governance/skills/
+plugins/gpt-project-toolkit/skills/
         |
         | pacote de distribuição
         v
-.agents/plugins/marketplace.json
+plugin.json
         |
-        | catálogo GitHub
-        v
-ChatGPT / Work / Codex
+        +--> plugins/releases/gpt-project-toolkit-<version>.zip
+        |
+        +--> .agents/plugins/marketplace.json
 ```
 
-## Formato adotado
+## Formato
 
-O plugin usa o formato portátil Agent Plugins 1.0:
+- `plugins/gpt-project-toolkit/plugin.json`
+- `plugins/gpt-project-toolkit/skills/<skill>/SKILL.md`
+- `.agents/plugins/marketplace.json`
 
-- `plugins/gpt-project-governance/plugin.json`
-- `plugins/gpt-project-governance/skills/<skill>/SKILL.md`
+O ZIP para `Criar plugin -> Importar` contém somente `plugin.json` e `skills/`.
 
-O formato portátil é preferido para novos pacotes. O overlay `.codex-plugin/plugin.json` não é necessário nesta primeira versão.
+## Roteamento
+
+O plugin não deve inferir que a tarefa é de governança só porque foi ativado.
+
+```text
+USER_TASK
+-> CLASSIFY_CAPABILITY
+-> SELECT_RELEVANT_SKILL(S)
+-> APPLY_SKILL_SCOPE
+```
+
+As cinco Skills continuam independentes e coordenáveis.
 
 ## Marketplace
 
-Arquivo:
-
-`.agents/plugins/marketplace.json`
-
 Plugin:
 
-`gpt-project-governance`
+`gpt-project-toolkit`
 
 Source:
 
-`./plugins/gpt-project-governance`
+`./plugins/gpt-project-toolkit`
 
 ## GitHub
 
-Repositório alvo:
+Repositório:
 
 `https://github.com/williambelini-maker/gpt-project-governance-skills`
 
-Para importação de marketplace em workspace, a documentação atual do ChatGPT usa o URL do repositório e procura `.agents/plugins/marketplace.json` na raiz quando o campo Path fica vazio.
-
-A importação de marketplace de workspace exige permissão administrativa no workspace. Para uso local/pessoal no desktop/Codex, o mesmo marketplace pode ser adicionado como fonte de plugin conforme os controles disponíveis na superfície.
+O nome técnico do repositório é preservado por continuidade de URLs e histórico; ele não define o nome nem o comportamento do plugin agregador.
 
 ## Atualização
 
@@ -67,75 +84,60 @@ CHANGE_CANONICAL_SKILL
 -> VALIDATE_REFERENCES
 -> VALIDATE_PLUGIN_JSON
 -> VALIDATE_MARKETPLACE_JSON
--> COMMIT
--> GITHUB_SYNC/IMPORT
+-> BUILD_RELEASE_ZIP
+-> VERIFY_RELEASE_ZIP
+-> PUBLISH_GITHUB
 ```
 
-## Validação mínima antes de publicar
+## Validação mínima
 
-- existem exatamente cinco diretórios de Skill;
-- cada Skill tem exatamente um `SKILL.md`;
-- referências e assets continuam relativos ao diretório da própria Skill;
-- `plugin.json` é JSON válido;
-- `.agents/plugins/marketplace.json` é JSON válido;
-- o nome da entrada do marketplace coincide com o nome do plugin;
-- o source path aponta para `./plugins/gpt-project-governance`;
+- exatamente cinco diretórios de Skill;
+- exatamente um `SKILL.md` por Skill;
+- referências e assets preservados;
+- `plugin.json` JSON válido;
+- nome do plugin = `gpt-project-toolkit`;
+- versão SemVer;
+- `shortDescription` com no máximo 30 caracteres;
+- marketplace aponta para `./plugins/gpt-project-toolkit`;
+- nenhuma Skill é declarada como default;
+- nenhuma descrição do agregador apresenta governança como função principal;
 - nenhum MCP/app é declarado sem existir;
-- licenças e avisos permanecem dentro das Skills;
-- a cópia de plugin corresponde à fonte canônica.
+- cópias das Skills idênticas às fontes canônicas.
 
-## Referências oficiais
+## Instalação no ChatGPT por Importar
 
-- https://developers.openai.com/plugins/build/plugins
-- https://learn.chatgpt.com/docs/enterprise/plugin-management
-- https://learn.chatgpt.com/docs/build-skills
+Artefato atual:
+
+`plugins/releases/gpt-project-toolkit-0.2.0.zip`
+
+Fluxo:
+
+```text
+ChatGPT
+-> Criar plugin
+-> Importar
+-> selecionar gpt-project-toolkit-0.2.0.zip
+```
+
+## Migração
+
+`gpt-project-governance-0.1.1.zip` é release histórica e superseded.
+
+Usuários devem substituir a instalação anterior pelo `GPT Project Toolkit` v0.2.0.
 
 ## Estado
 
 `PLUGIN_FORMAT = AGENT_PLUGINS_1_0_PORTABLE`
 
-`PLUGIN_VERSION = 0.1.1`
+`PLUGIN_VERSION = 0.2.0`
 
 `SKILL_COUNT = 5`
 
-`GITHUB_MARKETPLACE_MANIFEST = READY_LOCAL`
-
-`REMOTE_PUBLICATION = PUBLISHED`
+`REMOTE_PUBLICATION = PENDING`
 
 
-## Instalação no ChatGPT por Importar
+`RELEASE_ZIP = plugins/releases/gpt-project-toolkit-0.2.0.zip`
 
-Para a interface pessoal do ChatGPT que oferece `Criar plugin -> Importar`, o artefato oficial é:
+`RELEASE_ZIP_SHA256 = c0037c3e3bece289fc3c19113ef58e3f837ffa1bfb95c81200e48bfe44104c92`
 
-`plugins/releases/gpt-project-governance-0.1.1.zip`
-
-O ZIP contém somente o pacote importável:
-
-```text
-plugin.json
-skills/
-  governanca-projetos-continuidade/
-  alinhamento-macro-priorizacao/
-  organizacao-higiene-repositorio/
-  modelagem-fisico-matematica/
-  engenharia-simulacao-sistemas-automacao/
-```
-
-O marketplace GitHub permanece no repositório para superfícies que suportem marketplace, mas não é necessário para o botão `Importar`.
-
-Fluxo de atualização:
-
-```text
-skills_instalaveis/pacotes/
--> plugins/gpt-project-governance/skills/
--> VALIDATE
--> BUILD plugins/releases/gpt-project-governance-<version>.zip
--> PUBLISH GITHUB
--> CHATGPT: Criar plugin -> Importar -> selecionar ZIP
-```
-
-`RELEASE_ZIP = plugins/releases/gpt-project-governance-0.1.1.zip`
-
-`RELEASE_ZIP_SHA256 = d3ee8ffc4bfff87aee362713e4778c815360fb91178243b57410d0596869d09a`
-
-`RELEASE_GIT_COMMIT = 949c4943757c41128600215e9681893ae06be5d7`
+`RELEASE_ZIP_BYTES = 170028`

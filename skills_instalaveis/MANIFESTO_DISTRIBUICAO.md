@@ -40,10 +40,22 @@ Mais de uma skill pode atuar no mesmo trabalho quando cada uma permanecer no pr�
 ```text
 CANONICAL_EDITABLE_SOURCE = skills_instalaveis/pacotes/
 INDIVIDUAL_SKILL_DISTRIBUTION = skills_instalaveis/UPLOADS_CHATGPT/*.zip
-COMBINED_PLUGIN_DISTRIBUTION = plugins/gpt-project-governance/
+COMBINED_PLUGIN_DISTRIBUTION = plugins/gpt-project-toolkit/
 GITHUB_MARKETPLACE = .agents/plugins/marketplace.json
 ```
 
 O plugin conjunto não cria uma nova fonte da verdade. Sua árvore `skills/` deve permanecer idêntica aos pacotes canônicos correspondentes.
 
 Consulte `DISTRIBUICAO_PLUGIN_GITHUB.md`.
+
+
+## Regra do agregador
+
+```text
+PLUGIN_AGGREGATOR_ROLE = ROUTER
+DEFAULT_SKILL = NONE
+ROUTE_BY_TASK = TRUE
+GOVERNANCE_IS_NOT_DEFAULT = TRUE
+```
+
+O plugin conjunto não altera a precedência semântica das Skills nem transforma a Skill de governança em ponto de entrada obrigatório.

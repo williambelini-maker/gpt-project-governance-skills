@@ -4,14 +4,20 @@ Artefatos prontos para `ChatGPT -> Criar plugin -> Importar`.
 
 ## Atual
 
-- `gpt-project-governance-0.1.1.zip`
-- plugin: `gpt-project-governance`
-- versão: `0.1.1`
+- `gpt-project-toolkit-0.2.0.zip`
+- plugin: `gpt-project-toolkit`
+- display: `GPT Project Toolkit`
+- versão: `0.2.0`
 - conteúdo: `plugin.json` + `skills/`
-- SHA-256: `d3ee8ffc4bfff87aee362713e4778c815360fb91178243b57410d0596869d09a`
-- tamanho: `169742` bytes
-- Git commit: `949c4943757c41128600215e9681893ae06be5d7`
+- Skills: 5
 - MCP: não incluído
 - marketplace: não incluído no ZIP
+- SHA-256: `c0037c3e3bece289fc3c19113ef58e3f837ffa1bfb95c81200e48bfe44104c92`
+- tamanho: `170028` bytes
+- estado: validado e pronto para publicação
+
+## Histórico
+
+- `gpt-project-governance-0.1.1.zip` — superseded; nome e descrição do agregador eram excessivamente orientados à governança.
 
 A fonte editável das Skills continua em `skills_instalaveis/pacotes/`.

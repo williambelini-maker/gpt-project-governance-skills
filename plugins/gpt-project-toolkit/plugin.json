@@ -1,0 +1,41 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "gpt-project-toolkit",
+  "version": "0.2.0",
+  "description": "Conjunto coordenado de Skills para trabalho em projetos: continuidade, priorização, organização de repositórios, modelagem físico-matemática, engenharia, simulação e automação.",
+  "author": {
+    "name": "williambelini-maker",
+    "url": "https://github.com/williambelini-maker"
+  },
+  "homepage": "https://github.com/williambelini-maker/gpt-project-governance-skills",
+  "repository": "https://github.com/williambelini-maker/gpt-project-governance-skills",
+  "keywords": [
+    "project-toolkit",
+    "skills",
+    "continuity",
+    "prioritization",
+    "repository-organization",
+    "physical-modeling",
+    "engineering",
+    "simulation",
+    "automation"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "GPT Project Toolkit",
+        "shortDescription": "Skills para projetos técnicos",
+        "longDescription": "Toolkit com cinco Skills independentes e coordenáveis para continuidade de projetos, priorização macro, organização de repositórios, modelagem físico-matemática e engenharia de sistemas, simulação e automação. A Skill aplicável deve ser escolhida pela natureza da tarefa; governança não é o comportamento padrão do plugin.",
+        "developerName": "williambelini-maker",
+        "category": "Productivity",
+        "websiteURL": "https://github.com/williambelini-maker/gpt-project-governance-skills",
+        "capabilities": [],
+        "defaultPrompt": [
+          "Analise a tarefa e use apenas as Skills deste toolkit que forem relevantes.",
+          "Escolha a Skill adequada entre continuidade, priorização, organização, modelagem e engenharia ou simulação.",
+          "Combine Skills somente quando cada uma contribuir no próprio eixo de decisão."
+        ]
+      }
+    }
+  }
+}
