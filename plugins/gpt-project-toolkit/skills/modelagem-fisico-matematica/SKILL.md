@@ -51,3 +51,9 @@ Não invente variável, parâmetro, unidade, condição inicial/contorno ou recu
 Valide, conforme aplicável: existência/unicidade/estabilidade, unidades, domínio de validade, invariantes, limites, sensibilidade, condicionamento, convergência e plausibilidade física.
 
 Leia `references/REFERENCIA_APROFUNDADA.md` quando precisar de módulos avançados.
+
+## Fechamento de verificação acessível
+
+Se detectar inconsistência, obsolescência ou incerteza material que possa verificar com os acessos atuais, investigue na tarefa corrente até identificar a fonte/estado corrente e delimitar o impacto material. Não devolva ao usuário uma verificação que o próprio agente pode executar. Siga owner/fonte, referências diretas e dependentes materiais e pare quando o impacto estiver delimitado.
+
+`NO_UNRESOLVED_VERIFICATION_HANDOFF = TRUE`
