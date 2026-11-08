@@ -28,7 +28,7 @@ As Skills podem ser combinadas quando cada uma atua no próprio eixo de decisão
 Para instalar as cinco Skills juntas:
 
 ```text
-plugins/releases/gpt-project-toolkit-0.2.1.zip
+plugins/releases/gpt-project-toolkit-0.2.2.zip
 ```
 
 No ChatGPT:
@@ -36,7 +36,7 @@ No ChatGPT:
 ```text
 Criar plugin
 -> Importar
--> selecionar gpt-project-toolkit-0.2.1.zip
+-> selecionar gpt-project-toolkit-0.2.2.zip
 ```
 
 O pacote contém somente:
@@ -94,7 +94,7 @@ plugins/releases/gpt-project-toolkit-<version>.zip
 
 - fonte editável: `skills_instalaveis/pacotes/`
 - plugin: `plugins/gpt-project-toolkit/`
-- release atual: `plugins/releases/gpt-project-toolkit-0.2.1.zip`
+- release atual: `plugins/releases/gpt-project-toolkit-0.2.2.zip`
 - marketplace: `.agents/plugins/marketplace.json`
 - distribuição individual: `skills_instalaveis/UPLOADS_CHATGPT/`
 
@@ -174,7 +174,7 @@ There is **no default Skill**. The task determines which capability is loaded.
 Current combined ChatGPT package:
 
 ```text
-plugins/releases/gpt-project-toolkit-0.2.1.zip
+plugins/releases/gpt-project-toolkit-0.2.2.zip
 ```
 
 The editable Skill sources live in `skills_instalaveis/pacotes/`; `plugins/gpt-project-toolkit/` is a generated combined distribution.

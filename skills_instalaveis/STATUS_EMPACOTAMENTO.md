@@ -2,9 +2,9 @@
 
 `STATUS = FULL_BUNDLES_READY`
 
-`EPISTEMIC_REVISION = NO_UNVERIFIED_PREMISE_PROPAGATION_V1`
+`EPISTEMIC_REVISION = CLOSED_VERIFICATION_AND_BOUNDED_IMPACT_V2`
 
-`LAST_RECONCILED_AT = 2026-11-06`
+`LAST_RECONCILED_AT = 2026-11-08`
 
 `GOVERNANCE_TRIGGER = PROJECT_CONTEXT_MATERIAL_V2`
 
@@ -75,3 +75,16 @@ Governança, Macro, Modelagem e Engenharia possuem gates explícitos antes de us
 `BUNDLE_LICENSE_NOTICE = INCLUDED`
 
 Todos os bundles instaláveis carregam `LICENSE.md` interno. O material operacional da Skill é PolyForm Noncommercial 1.0.0; documentação/referências incorporadas preservam a licença documental aplicável definida no mapa de licenciamento do repositório.
+
+
+## Revisão de fechamento de investigação — V2
+
+O contrato comum agora exige:
+
+```text
+NO_UNRESOLVED_VERIFICATION_HANDOFF = TRUE
+DISCOVERED_STALENESS_IS_AN_INVESTIGATION_TRIGGER = TRUE
+MATERIAL_FINDING_REQUIRES_BOUNDED_IMPACT = TRUE
+```
+
+Quando houver acesso e ferramentas suficientes, inconsistência/obsolescência material deve ser investigada até identificar a fonte corrente, comparar antigo × atual, rastrear dependentes materiais e delimitar impacto. A busca é causalmente limitada; bloqueio só é devolvido quando realmente impede o fechamento.

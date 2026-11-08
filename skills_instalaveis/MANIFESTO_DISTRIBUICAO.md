@@ -2,7 +2,7 @@
 
 `DISTRIBUTION_STATUS = READY`
 
-`EPISTEMIC_POLICY = NO_UNVERIFIED_PREMISE_PROPAGATION_V1`
+`EPISTEMIC_POLICY = CLOSED_VERIFICATION_AND_BOUNDED_IMPACT_V2`
 
 ## Pacotes
 
@@ -59,3 +59,12 @@ GOVERNANCE_IS_NOT_DEFAULT = TRUE
 ```
 
 O plugin conjunto não altera a precedência semântica das Skills nem transforma a Skill de governança em ponto de entrada obrigatório.
+
+
+## Fechamento de verificação
+
+```text
+NO_UNRESOLVED_VERIFICATION_HANDOFF = TRUE
+DISCOVERED_STALENESS_IS_AN_INVESTIGATION_TRIGGER = TRUE
+MATERIAL_FINDING_REQUIRES_BOUNDED_IMPACT = TRUE
+```

@@ -64,6 +64,8 @@ INFERENCE_CANNOT_PROMOTE_IT_TO_TRUTH
 
 Se a decisão muda com uma claim não validada, a investigação da claim precede a execução consequente.
 
+Se a skill detectar obsolescência, conflito ou incerteza material que pode verificar com os acessos disponíveis, deve fechar a investigação na tarefa atual e delimitar o impacto antes de entregar. `NO_UNRESOLVED_VERIFICATION_HANDOFF = TRUE`. A busca segue owner/fonte autoritativa, referências diretas e dependentes materiais; não vira varredura indiscriminada.
+
 ## Matriz de roteamento
 
 | Situação | Skill principal | Skills complementares |
