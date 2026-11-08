@@ -2,7 +2,7 @@
 
 `DISTRIBUTION_STATUS = READY`
 
-`EPISTEMIC_POLICY = CLOSED_VERIFICATION_AND_BOUNDED_IMPACT_V2`
+`EPISTEMIC_POLICY = DELIVERY_COMPLETENESS_INTENT_RECONCILIATION_V3`
 
 ## Pacotes
 
@@ -61,10 +61,13 @@ GOVERNANCE_IS_NOT_DEFAULT = TRUE
 O plugin conjunto não altera a precedência semântica das Skills nem transforma a Skill de governança em ponto de entrada obrigatório.
 
 
-## Fechamento de verificação
+## Gate universal de entrega
 
 ```text
-NO_UNRESOLVED_VERIFICATION_HANDOFF = TRUE
-DISCOVERED_STALENESS_IS_AN_INVESTIGATION_TRIGGER = TRUE
-MATERIAL_FINDING_REQUIRES_BOUNDED_IMPACT = TRUE
+DELIVER_AT_HIGHEST_JUSTIFIED_COMPLETENESS = TRUE
+NO_PREMATURE_HANDOFF = TRUE
+DO_NOT_REASK_ESTABLISHED_CONTEXT = TRUE
+COGNITIVE_COMPLETION_IS_NOT_OPERATIONAL_EXECUTION = TRUE
 ```
+
+A regra vale em qualquer domínio: reconciliar o pedido, validar incerteza material, concluir o que é resolvível e separar conclusão cognitiva de execução operacional.

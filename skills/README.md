@@ -31,7 +31,7 @@ Se isso for materialmente desconhecido, consultar o owner macro antes de aprofun
 
 Antes de usar qualquer claim material como entrada de decisão, aplique `HYPOTHESIS_VALIDATION_GATE`. Skill pode formular hipótese; não pode promovê-la a verdade sem evidência.
 
-Quando uma skill detectar inconsistência, obsolescência ou incerteza material que consegue verificar diretamente, a investigação deve ser fechada na tarefa corrente: localizar fonte autoritativa, comparar estado antigo × atual, rastrear dependentes materiais e delimitar impacto. Não devolver como “próximo trabalho” algo verificável com os acessos disponíveis. `NO_UNRESOLVED_VERIFICATION_HANDOFF = TRUE`.
+Antes da entrega, aplique também `USER_INTENT_RECONCILIATION_GATE` e `COMPLETENESS_BEFORE_DELIVERY_GATE`: confira se todas as partes materiais do pedido foram atendidas, resolva o que já é resolvível com o contexto disponível, não re-pergunte o que já foi estabelecido e não use incerteza verbal para encobrir análise interrompida. Completar o raciocínio não autoriza automaticamente executar mudanças materiais.
 
 ## Catálogo
 

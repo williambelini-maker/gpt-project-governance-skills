@@ -92,49 +92,33 @@ Não fazer pesquisa ampla quando uma inspeção ou teste local resolve.
 
 Não usar uma cadeia de raciocínio do próprio agente como substituto para evidência observável quando a afirmação é verificável.
 
-## 4. Fechamento obrigatório de verificação acessível
+## 4. Incerteza resolvível não é resultado final
 
-Detectar inconsistência, obsolescência, conflito ou dado possivelmente desatualizado **não encerra a investigação** quando o agente tem acesso suficiente às fontes e ferramentas capazes de resolver a dúvida.
+Uma incerteza material necessária para responder ao pedido não deve ser apresentada como conclusão provisória quando pode ser resolvida, dentro do escopo, com o contexto ou ferramentas já disponíveis.
 
 ```text
-NO_UNRESOLVED_VERIFICATION_HANDOFF = TRUE
-DISCOVERED_STALENESS_IS_AN_INVESTIGATION_TRIGGER = TRUE
-MATERIAL_FINDING_REQUIRES_BOUNDED_IMPACT = TRUE
+VERIFIABLE_UNCERTAINTY_IS_NOT_A_FINAL_RESULT = TRUE
+PROBABILISTIC_LANGUAGE_REQUIRES_GENUINE_UNCERTAINTY = TRUE
+USE_LEAST_SUFFICIENT_VALIDATION_PATH = TRUE
 ```
 
 ```text
-IF MATERIAL_UNCERTAINTY_OR_STALENESS_DISCOVERED
-AND AGENT_HAS_SUFFICIENT_ACCESS_AND_TOOLS
+IF CLAIM_IS_MATERIAL_TO_REQUESTED_RESULT
+AND CLAIM_IS_RESOLVABLE_NOW
 THEN
-    VERIFY_NOW
-    IDENTIFY_AUTHORITATIVE_CURRENT_SOURCE
-    COMPARE_OLD_VS_CURRENT
-    IDENTIFY_CORRECT_CURRENT_VALUE_OR_STATUS
-    TRACE_MATERIAL_DEPENDENTS
-    BOUND_IMPACT
-    RECONCILE_AFFECTED_OWNERS
-    REPORT_EVIDENCE_AND_RESOLVED_RESULT
+    VALIDATE_ENOUGH_FOR_CURRENT_DECISION
+    UPDATE_EPISTEMIC_STATUS
+    DELIVER_THE_RESULT
 ELSE
-    REPORT_EXACT_BLOCKER
-    REPORT_EVIDENCE_NEEDED
+    PRESERVE_GENUINE_UNCERTAINTY
+    STATE_THE_EXACT_LIMIT
 ```
 
-Não delegar ao usuário uma verificação que o próprio agente pode executar diretamente. “Isso precisa ser verificado” é incompleto quando a verificação está ao alcance do agente.
+Não usar “provavelmente”, “possivelmente”, “seria preciso verificar”, “vale comparar” ou “próximo passo” como substituto para uma análise que pode ser concluída agora.
 
-### Escopo causalmente limitado
+Isso não obriga pesquisa ampla nem validação ritual. Use o caminho mínimo suficiente para a decisão atual e pare quando a claim estiver justificada no escopo. Não revalidar contexto já estabelecido sem fato novo, contradição ou ambiguidade material.
 
-```text
-AUTHORITATIVE_OWNER
--> DIRECT_REFERENCES
--> MATERIAL_DEPENDENTS
--> STOP_WHEN_IMPACT_IS_BOUNDED
-```
-
-Expandir a busca somente quando a fronteira de dependência ainda não estiver clara ou nova evidência mostrar impacto adicional. Não transformar finding local em varredura indiscriminada.
-
-### Critério de completude
-
-“Este dado está obsoleto” é finding intermediário. Quando acessível, o fechamento identifica a fonte/resultado que supersede o antigo, o valor/estado corrente, os dependentes materiais afetados, o que precisa ser reconciliado, o que permanece válido e a evidência/escopo verificado.
+Também não confundir fechamento epistemológico com execução: concluir que uma mudança é adequada não autoriza aplicá-la sem o gate de ação correspondente.
 
 ## 5. Inferência permitida
 
@@ -302,7 +286,9 @@ Hipóteses abertas devem continuar visivelmente rotuladas.
 - copiar hipótese para STATUS/MACRO_STATUS e, por repetição, transformá-la em verdade;
 - pesquisar somente evidência confirmatória;
 - ignorar dado contrário porque quebra a narrativa construída;
-- detectar dado obsoleto e devolver “verificar depois” quando fontes e dependentes materiais estão acessíveis;
-- declarar que “possivelmente existem outros casos” sem executar a busca causalmente limitada capaz de confirmar ou refutar isso.
+- usar linguagem probabilística como substituto para análise/verificação material que está disponível;
+- entregar apenas plano de checagem, comparação ou avaliação quando o resultado solicitado pode ser obtido agora;
+- pedir novamente informação ou validação já estabelecida sem nova ambiguidade material;
+- executar mudança material apenas porque o raciocínio foi concluído, sem autorização/justificação operacional suficiente.
 
 > A função da hipótese é orientar investigação, não substituir investigação.

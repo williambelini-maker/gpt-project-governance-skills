@@ -2,7 +2,7 @@
 
 `STATUS = FULL_BUNDLES_READY`
 
-`EPISTEMIC_REVISION = CLOSED_VERIFICATION_AND_BOUNDED_IMPACT_V2`
+`EPISTEMIC_REVISION = DELIVERY_COMPLETENESS_INTENT_RECONCILIATION_V3`
 
 `LAST_RECONCILED_AT = 2026-11-08`
 
@@ -77,14 +77,23 @@ Governança, Macro, Modelagem e Engenharia possuem gates explícitos antes de us
 Todos os bundles instaláveis carregam `LICENSE.md` interno. O material operacional da Skill é PolyForm Noncommercial 1.0.0; documentação/referências incorporadas preservam a licença documental aplicável definida no mapa de licenciamento do repositório.
 
 
-## Revisão de fechamento de investigação — V2
+## Revisão universal de entrega — V3
 
-O contrato comum agora exige:
+O contrato comum foi generalizado. A versão anterior estava excessivamente centrada em obsolescência/verificação. Agora o comportamento universal separa:
 
 ```text
-NO_UNRESOLVED_VERIFICATION_HANDOFF = TRUE
-DISCOVERED_STALENESS_IS_AN_INVESTIGATION_TRIGGER = TRUE
-MATERIAL_FINDING_REQUIRES_BOUNDED_IMPACT = TRUE
+USER_INTENT_RECONCILIATION
+EPISTEMIC_VALIDATION_WHEN_MATERIAL
+COMPLETENESS_BEFORE_DELIVERY
+ACTION_AUTHORIZATION
 ```
 
-Quando houver acesso e ferramentas suficientes, inconsistência/obsolescência material deve ser investigada até identificar a fonte corrente, comparar antigo × atual, rastrear dependentes materiais e delimitar impacto. A busca é causalmente limitada; bloqueio só é devolvido quando realmente impede o fechamento.
+```text
+DELIVER_AT_HIGHEST_JUSTIFIED_COMPLETENESS = TRUE
+NO_PREMATURE_HANDOFF = TRUE
+NO_SECOND_PROMPT_FOR_ALREADY_SOLVABLE_REQUIREMENT = TRUE
+DO_NOT_REASK_ESTABLISHED_CONTEXT = TRUE
+COGNITIVE_COMPLETION_IS_NOT_OPERATIONAL_EXECUTION = TRUE
+```
+
+A Skill conclui o que é resolvível, preserva incerteza genuína, evita revalidação ritual e não transforma fechamento analítico em autorização automática para agir.

@@ -52,14 +52,54 @@ HYPOTHESIS_VALIDATION_GATE
 Se a decisão muda conforme claim em `UNKNOWN`, `HYPOTHESIS` ou `CONFLICT`, validar primeiro. Trabalho exploratório pode testar a hipótese, mas não promovê-la sem evidência.
 
 
-## Fechamento obrigatório de investigação acessível
+## Gate universal de entrega
+
+Todas as Skills obedecem a um gate de qualidade antes da entrega:
 
 ```text
-NO_UNRESOLVED_VERIFICATION_HANDOFF = TRUE
-DISCOVERED_STALENESS_IS_AN_INVESTIGATION_TRIGGER = TRUE
-MATERIAL_FINDING_REQUIRES_BOUNDED_IMPACT = TRUE
+DELIVER_AT_HIGHEST_JUSTIFIED_COMPLETENESS = TRUE
+NO_PREMATURE_HANDOFF = TRUE
+NO_SECOND_PROMPT_FOR_ALREADY_SOLVABLE_REQUIREMENT = TRUE
+DO_NOT_REASK_ESTABLISHED_CONTEXT = TRUE
+COGNITIVE_COMPLETION_IS_NOT_OPERATIONAL_EXECUTION = TRUE
 ```
 
-Se uma skill encontra inconsistência, dado obsoleto, conflito ou incerteza material e possui acesso/ferramentas suficientes para investigar, deve verificar na tarefa corrente, identificar a fonte autoritativa, comparar antigo × atual, rastrear dependentes materiais e delimitar o impacto antes de concluir.
+```text
+USER_INTENT_RECONCILIATION_GATE
+-> EXPLICIT_REQUESTS
+-> CONSTRAINTS_AND_REJECTIONS
+-> EXPECTED_OUTPUT
+-> AVAILABLE_AND_ESTABLISHED_CONTEXT
+-> MATERIAL_PARTS_STILL_UNFULFILLED?
+```
 
-Não transformar “posso verificar” em “o usuário deve verificar”. Seguir owner/fonte, referências diretas e dependentes materiais até o impacto ficar delimitado. Se não for possível fechar, reportar o bloqueio exato e a evidência necessária.
+```text
+COMPLETENESS_BEFORE_DELIVERY_GATE
+IS_THIS_THE_RESULT
+OR_ONLY_A_DESCRIPTION_OF_WORK_STILL_TO_DO?
+WHAT_MATERIAL_PART_IS_RESOLVABLE_NOW?
+AM_I_LEAVING_"PROBABLY/POSSIBLY/SHOULD_CHECK/NEXT_STEP"
+ONLY_BECAUSE_I_STOPPED_EARLY?
+AM_I_ASKING_FOR_SOMETHING_ALREADY_ANSWERED?
+```
+
+Se uma parte material do pedido é resolvível agora, dentro do escopo e com contexto/ferramentas disponíveis, complete o raciocínio antes da entrega. Não exigir um segundo prompt para perceber requisito já explícito.
+
+```text
+UNRESOLVED_BECAUSE_REALITY_IS_UNCERTAIN
+!=
+UNRESOLVED_BECAUSE_AGENT_STOPPED_EARLY
+```
+
+Linguagem probabilística é legítima para incerteza real; não substitui análise ou verificação disponível. Não revalidar por ritual o que já está estabelecido, salvo fato novo, contradição ou ambiguidade material.
+
+Fechar o raciocínio não autoriza automaticamente mudança material:
+
+```text
+ACTION_GATE
+IS_THE_ACTION_REQUESTED_OR_AUTHORIZED?
+IS_THE_MATERIAL_BASIS_SUFFICIENT?
+ARE_RELEVANT_CONSEQUENCES_UNDERSTOOD?
+```
+
+Sem autorização/justificativa suficiente para agir, entregue a conclusão, proposta ou contexto corrente já estruturado e deixe explícito somente o bloqueio real de execução.

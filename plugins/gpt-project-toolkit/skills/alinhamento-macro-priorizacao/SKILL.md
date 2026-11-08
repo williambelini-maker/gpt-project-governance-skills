@@ -59,9 +59,3 @@ LOAD_MACRO_STATE
 Classifique resultados como MACRO, MESO, LOCAL ou INFRASTRUCTURAL. Não confunda mais produção, cobertura, precisão ou runtime com ganho macro sem cadeia causal.
 
 Leia `references/REFERENCIA_APROFUNDADA.md` para VOI, centralidade, portfólio de investigações, proxy traps e critérios detalhados.
-
-## Fechamento de verificação acessível
-
-Se detectar inconsistência, obsolescência ou incerteza material que possa verificar com os acessos atuais, investigue na tarefa corrente até identificar a fonte/estado corrente e delimitar o impacto material. Não devolva ao usuário uma verificação que o próprio agente pode executar. Siga owner/fonte, referências diretas e dependentes materiais e pare quando o impacto estiver delimitado.
-
-`NO_UNRESOLVED_VERIFICATION_HANDOFF = TRUE`

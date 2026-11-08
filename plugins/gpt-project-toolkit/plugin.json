@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "gpt-project-toolkit",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Conjunto coordenado de Skills para continuidade de projetos, priorização, organização de repositórios, modelagem físico-matemática, engenharia, simulação e automação.",
   "author": {
     "name": "williambelini-maker",
@@ -34,7 +34,8 @@
           "Analise a tarefa e use apenas as Skills deste toolkit que forem relevantes.",
           "Escolha entre continuidade, priorização, organização, modelagem e engenharia ou simulação conforme a tarefa.",
           "Combine Skills somente quando cada uma contribuir no próprio eixo de decisão.",
-          "Ao detectar inconsistência, obsolescência ou incerteza material verificável com os acessos disponíveis, investigue até delimitar o impacto e traga evidências em vez de devolver a verificação ao usuário."
+          "Antes de entregar, reconcilie a saída com o pedido explícito e o contexto já disponível; complete todas as partes materiais que já são resolvíveis e não re-pergunte o que está estabelecido.",
+          "Valide incerteza material antes de tratá-la como fato, mas não use validação ritual nem linguagem probabilística para encobrir análise interrompida. Completar o raciocínio não autoriza automaticamente executar mudanças materiais."
         ]
       }
     }

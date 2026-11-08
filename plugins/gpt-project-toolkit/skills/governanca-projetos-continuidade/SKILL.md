@@ -58,26 +58,18 @@ HYPOTHESIS -> ASSUME_TRUE -> PROPAGATE
 
 Leia `references/VALIDACAO_PREMISSAS_E_EVIDENCIA.md` quando houver dúvida de suficiência, causalidade ou conflito.
 
-## Fechamento de descoberta material
+## Gate de entrega
 
-Detectar inconsistência ou obsolescência não é conclusão suficiente quando a investigação está ao alcance do agente.
-
-```text
-MATERIAL_FINDING
--> AUTHORITATIVE_CURRENT_SOURCE
--> OLD_VS_CURRENT
--> MATERIAL_DEPENDENTS
--> BOUND_IMPACT
--> RECONCILE_AFFECTED_OWNERS
--> REPORT_EVIDENCE_AND_RESOLVED_RESULT
-```
+Antes do handoff, reconcilie a saída com o pedido explícito e o contexto já disponível. Não entregue como “pendência”, “provável”, “vale verificar” ou “próximo passo” uma parte material que pode ser resolvida agora. Não peça novamente o que já foi estabelecido.
 
 ```text
-DO_NOT_DELEGATE_VERIFICATION_TO_USER
-WHEN_AGENT_CAN_VERIFY_DIRECTLY
+COMPLETE_REASONING_BEFORE_HANDOFF
+VALIDATE_MATERIAL_UNCERTAINTY
+DO_NOT_REVALIDATE_ESTABLISHED_CONTEXT_WITHOUT_CAUSE
+COGNITIVE_COMPLETION != OPERATIONAL_EXECUTION
 ```
 
-A investigação deve ser causalmente limitada: seguir owner, referências diretas e dependentes materiais e parar quando o impacto estiver delimitado. Só deixar a verificação em aberto quando houver bloqueio real de acesso, ferramenta, dado ou autoridade.
+Fechar análise não autoriza mudança material. Alterações seguem instrução, contrato e autorização aplicáveis.
 
 ## Cold start
 

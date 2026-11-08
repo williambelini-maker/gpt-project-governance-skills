@@ -28,7 +28,7 @@ As Skills podem ser combinadas quando cada uma atua no próprio eixo de decisão
 Para instalar as cinco Skills juntas:
 
 ```text
-plugins/releases/gpt-project-toolkit-0.2.2.zip
+plugins/releases/gpt-project-toolkit-0.2.3.zip
 ```
 
 No ChatGPT:
@@ -36,7 +36,7 @@ No ChatGPT:
 ```text
 Criar plugin
 -> Importar
--> selecionar gpt-project-toolkit-0.2.2.zip
+-> selecionar gpt-project-toolkit-0.2.3.zip
 ```
 
 O pacote contém somente:
@@ -94,7 +94,7 @@ plugins/releases/gpt-project-toolkit-<version>.zip
 
 - fonte editável: `skills_instalaveis/pacotes/`
 - plugin: `plugins/gpt-project-toolkit/`
-- release atual: `plugins/releases/gpt-project-toolkit-0.2.2.zip`
+- release atual: `plugins/releases/gpt-project-toolkit-0.2.3.zip`
 - marketplace: `.agents/plugins/marketplace.json`
 - distribuição individual: `skills_instalaveis/UPLOADS_CHATGPT/`
 
@@ -144,6 +144,15 @@ NO_UNVERIFIED_PREMISE_PROPAGATION = TRUE
 
 Isso não significa que toda tarefa seja de governança; é apenas uma regra de qualidade comum às Skills quando decisões dependem de claims materiais.
 
+## Princípio de completude da entrega
+
+Além do gate epistemológico, as Skills compartilham um gate de entrega: reconciliar a resposta com o pedido explícito, concluir o que já é resolvível, não re-perguntar contexto estabelecido e distinguir incerteza real de raciocínio interrompido. Isso **não** autoriza executar mudanças materiais automaticamente; ação e conclusão são gates separados.
+
+```text
+DELIVER_AT_HIGHEST_JUSTIFIED_COMPLETENESS
+COGNITIVE_COMPLETION != OPERATIONAL_EXECUTION
+```
+
 ## Licenciamento
 
 Este projeto é **source-available** e usa licenciamento público não comercial com possibilidade de licenciamento comercial separado.
@@ -174,7 +183,7 @@ There is **no default Skill**. The task determines which capability is loaded.
 Current combined ChatGPT package:
 
 ```text
-plugins/releases/gpt-project-toolkit-0.2.2.zip
+plugins/releases/gpt-project-toolkit-0.2.3.zip
 ```
 
 The editable Skill sources live in `skills_instalaveis/pacotes/`; `plugins/gpt-project-toolkit/` is a generated combined distribution.
