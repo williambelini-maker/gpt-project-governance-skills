@@ -54,3 +54,9 @@ INSPECT_NEAREST_STRUCTURE
 - legado é migrado incrementalmente após verificar dependências de caminho.
 
 Leia `references/POLITICA_ESTRUTURA_REPOSITORIO.md` para a política completa e use `assets/ESTRUTURA_REPOSITORIO.md` quando o projeto exigir contrato físico próprio.
+
+## Fechamento de verificação acessível
+
+Se detectar inconsistência, obsolescência ou incerteza material que possa verificar com os acessos atuais, investigue na tarefa corrente até identificar a fonte/estado corrente e delimitar o impacto material. Não devolva ao usuário uma verificação que o próprio agente pode executar. Siga owner/fonte, referências diretas e dependentes materiais e pare quando o impacto estiver delimitado.
+
+`NO_UNRESOLVED_VERIFICATION_HANDOFF = TRUE`
