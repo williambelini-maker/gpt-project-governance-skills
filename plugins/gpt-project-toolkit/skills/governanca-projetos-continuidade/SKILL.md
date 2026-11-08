@@ -58,6 +58,27 @@ HYPOTHESIS -> ASSUME_TRUE -> PROPAGATE
 
 Leia `references/VALIDACAO_PREMISSAS_E_EVIDENCIA.md` quando houver dúvida de suficiência, causalidade ou conflito.
 
+## Fechamento de descoberta material
+
+Detectar inconsistência ou obsolescência não é conclusão suficiente quando a investigação está ao alcance do agente.
+
+```text
+MATERIAL_FINDING
+-> AUTHORITATIVE_CURRENT_SOURCE
+-> OLD_VS_CURRENT
+-> MATERIAL_DEPENDENTS
+-> BOUND_IMPACT
+-> RECONCILE_AFFECTED_OWNERS
+-> REPORT_EVIDENCE_AND_RESOLVED_RESULT
+```
+
+```text
+DO_NOT_DELEGATE_VERIFICATION_TO_USER
+WHEN_AGENT_CAN_VERIFY_DIRECTLY
+```
+
+A investigação deve ser causalmente limitada: seguir owner, referências diretas e dependentes materiais e parar quando o impacto estiver delimitado. Só deixar a verificação em aberto quando houver bloqueio real de acesso, ferramenta, dado ou autoridade.
+
 ## Cold start
 
 1. Identifique escopo e faça inventário raso.

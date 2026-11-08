@@ -50,3 +50,16 @@ HYPOTHESIS_VALIDATION_GATE
 ```
 
 Se a decisão muda conforme claim em `UNKNOWN`, `HYPOTHESIS` ou `CONFLICT`, validar primeiro. Trabalho exploratório pode testar a hipótese, mas não promovê-la sem evidência.
+
+
+## Fechamento obrigatório de investigação acessível
+
+```text
+NO_UNRESOLVED_VERIFICATION_HANDOFF = TRUE
+DISCOVERED_STALENESS_IS_AN_INVESTIGATION_TRIGGER = TRUE
+MATERIAL_FINDING_REQUIRES_BOUNDED_IMPACT = TRUE
+```
+
+Se uma skill encontra inconsistência, dado obsoleto, conflito ou incerteza material e possui acesso/ferramentas suficientes para investigar, deve verificar na tarefa corrente, identificar a fonte autoritativa, comparar antigo × atual, rastrear dependentes materiais e delimitar o impacto antes de concluir.
+
+Não transformar “posso verificar” em “o usuário deve verificar”. Seguir owner/fonte, referências diretas e dependentes materiais até o impacto ficar delimitado. Se não for possível fechar, reportar o bloqueio exato e a evidência necessária.

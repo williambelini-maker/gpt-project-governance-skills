@@ -92,7 +92,51 @@ Não fazer pesquisa ampla quando uma inspeção ou teste local resolve.
 
 Não usar uma cadeia de raciocínio do próprio agente como substituto para evidência observável quando a afirmação é verificável.
 
-## 4. Inferência permitida
+## 4. Fechamento obrigatório de verificação acessível
+
+Detectar inconsistência, obsolescência, conflito ou dado possivelmente desatualizado **não encerra a investigação** quando o agente tem acesso suficiente às fontes e ferramentas capazes de resolver a dúvida.
+
+```text
+NO_UNRESOLVED_VERIFICATION_HANDOFF = TRUE
+DISCOVERED_STALENESS_IS_AN_INVESTIGATION_TRIGGER = TRUE
+MATERIAL_FINDING_REQUIRES_BOUNDED_IMPACT = TRUE
+```
+
+```text
+IF MATERIAL_UNCERTAINTY_OR_STALENESS_DISCOVERED
+AND AGENT_HAS_SUFFICIENT_ACCESS_AND_TOOLS
+THEN
+    VERIFY_NOW
+    IDENTIFY_AUTHORITATIVE_CURRENT_SOURCE
+    COMPARE_OLD_VS_CURRENT
+    IDENTIFY_CORRECT_CURRENT_VALUE_OR_STATUS
+    TRACE_MATERIAL_DEPENDENTS
+    BOUND_IMPACT
+    RECONCILE_AFFECTED_OWNERS
+    REPORT_EVIDENCE_AND_RESOLVED_RESULT
+ELSE
+    REPORT_EXACT_BLOCKER
+    REPORT_EVIDENCE_NEEDED
+```
+
+Não delegar ao usuário uma verificação que o próprio agente pode executar diretamente. “Isso precisa ser verificado” é incompleto quando a verificação está ao alcance do agente.
+
+### Escopo causalmente limitado
+
+```text
+AUTHORITATIVE_OWNER
+-> DIRECT_REFERENCES
+-> MATERIAL_DEPENDENTS
+-> STOP_WHEN_IMPACT_IS_BOUNDED
+```
+
+Expandir a busca somente quando a fronteira de dependência ainda não estiver clara ou nova evidência mostrar impacto adicional. Não transformar finding local em varredura indiscriminada.
+
+### Critério de completude
+
+“Este dado está obsoleto” é finding intermediário. Quando acessível, o fechamento identifica a fonte/resultado que supersede o antigo, o valor/estado corrente, os dependentes materiais afetados, o que precisa ser reconciliado, o que permanece válido e a evidência/escopo verificado.
+
+## 5. Inferência permitida
 
 Inferência é permitida para:
 
@@ -112,7 +156,7 @@ Inferência não é suficiente, sozinha, para:
 - declarar resultado como verdadeiro;
 - preencher variável/dado ausente.
 
-## 5. Pesquisa antes de propagação
+## 6. Pesquisa antes de propagação
 
 Se uma hipótese material sustenta o próximo passo:
 
@@ -133,7 +177,7 @@ HYPOTHESIS
 -> BUILD_MORE_WORK_ON_TOP
 ```
 
-## 6. Prioridade depende de premissas validadas
+## 7. Prioridade depende de premissas validadas
 
 Antes de priorizar uma frente:
 
@@ -160,7 +204,7 @@ UNCERTAINTY_EXPLICIT = TRUE
 
 Nunca apresentar prioridade provisória como decisão estabelecida.
 
-## 7. Diagnóstico e causalidade
+## 8. Diagnóstico e causalidade
 
 Correlação, coincidência temporal ou padrão compatível não estabelecem causa.
 
@@ -176,7 +220,7 @@ CONFOUNDER?
 
 Se não houver discriminação suficiente, manter como hipótese.
 
-## 8. Dados e métricas
+## 9. Dados e métricas
 
 Antes de concluir a partir de dados:
 
@@ -193,7 +237,7 @@ PROVENANCE?
 
 Resultado calculado sobre dados cuja validade não foi verificada não sobe automaticamente para `VERIFIED`.
 
-## 9. Fontes e evidência
+## 10. Fontes e evidência
 
 Preferência:
 
@@ -206,7 +250,7 @@ Preferência:
 
 Uma afirmação do próprio agente não conta como fonte independente.
 
-## 10. Trabalho exploratório
+## 11. Trabalho exploratório
 
 É permitido executar trabalho reversível cujo **objetivo explícito seja testar a hipótese**.
 
@@ -219,7 +263,7 @@ AND RESULT_IS_NOT_PROMOTED_WITHOUT_EVIDENCE
 
 Não construir uma cadeia longa de implementação sobre hipótese não validada.
 
-## 11. Quando não é possível validar
+## 12. Quando não é possível validar
 
 Não inventar fechamento.
 
@@ -233,7 +277,7 @@ EVIDENCE_NEEDED = <o que resolveria>
 
 Se houver caminhos robustos a ambos os cenários, eles podem prosseguir desde que a decisão não dependa da hipótese.
 
-## 12. Promoção de conhecimento
+## 13. Promoção de conhecimento
 
 Uma claim só entra em base canônica/estado vivo como estabelecida quando:
 
@@ -247,7 +291,7 @@ STATUS = SUPPORTED | VERIFIED
 
 Hipóteses abertas devem continuar visivelmente rotuladas.
 
-## 13. Anti-padrões
+## 14. Anti-padrões
 
 - “provavelmente X” virar “X” no parágrafo seguinte;
 - inferir valor ausente e continuar cálculo como fato;
@@ -257,6 +301,8 @@ Hipóteses abertas devem continuar visivelmente rotuladas.
 - usar consenso interno do chat como confirmação;
 - copiar hipótese para STATUS/MACRO_STATUS e, por repetição, transformá-la em verdade;
 - pesquisar somente evidência confirmatória;
-- ignorar dado contrário porque quebra a narrativa construída.
+- ignorar dado contrário porque quebra a narrativa construída;
+- detectar dado obsoleto e devolver “verificar depois” quando fontes e dependentes materiais estão acessíveis;
+- declarar que “possivelmente existem outros casos” sem executar a busca causalmente limitada capaz de confirmar ou refutar isso.
 
 > A função da hipótese é orientar investigação, não substituir investigação.

@@ -46,6 +46,27 @@ Não usar raciocínio do próprio agente como evidência independente. Trabalho 
 
 Consulte `../POLITICA_VALIDACAO_PREMISSAS_E_EVIDENCIA.md` quando houver dúvida de suficiência, causalidade, conflito de evidências ou premissa material aberta.
 
+## 1.1. Verificação acessível deve ser fechada
+
+```text
+NO_UNRESOLVED_VERIFICATION_HANDOFF = TRUE
+MATERIAL_FINDING_REQUIRES_BOUNDED_IMPACT = TRUE
+```
+
+Se o agente descobrir obsolescência, conflito ou incerteza material e possuir acesso/ferramentas suficientes para resolver, a verificação faz parte da tarefa atual. Não transformar capacidade própria de investigação em novo trabalho para o usuário.
+
+```text
+DISCOVERY
+-> AUTHORITATIVE_SOURCE
+-> OLD_VS_CURRENT
+-> MATERIAL_DEPENDENTS
+-> BOUND_IMPACT
+-> RECONCILE
+-> REPORT_EVIDENCE_AND_RESULT
+```
+
+A busca é causalmente limitada: owner/fonte autoritativa, referências diretas e dependentes materiais, parando quando o impacto estiver delimitado. Só reportar bloqueio futuro quando faltar acesso, ferramenta, dado ou autoridade necessária.
+
 ## 2. Evidência atual governa postura
 
 ```text
@@ -242,4 +263,4 @@ Não repetir validação já estabelecida sem fato novo que altere hipótese, es
 
 ## Regra máxima
 
-> Valide premissas materiais antes de construir sobre elas; preserve orientação macro, contrato, evidência, bases, invariantes e estrutura física; coloque cada artefato na casa correta; produza; valide; propague o impacto; atualize somente o que mudou; continue.
+> Valide premissas materiais antes de construir sobre elas; quando a incerteza for verificável com os acessos disponíveis, feche a investigação e delimite o impacto em vez de devolvê-la ao usuário; preserve orientação macro, contrato, evidência, bases, invariantes e estrutura física; coloque cada artefato na casa correta; produza; valide; propague o impacto; atualize somente o que mudou; continue.
