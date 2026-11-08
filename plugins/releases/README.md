@@ -4,13 +4,13 @@ Artefatos prontos para `ChatGPT -> Criar plugin -> Importar`.
 
 ## Atual
 
-- `gpt-project-toolkit-0.2.1.zip`
+- `gpt-project-toolkit-0.2.2.zip`
 - plugin: `gpt-project-toolkit`
 - display: `GPT Project Toolkit`
 - Skills: 5
 - conteúdo: `plugin.json` + `skills/`
-- tamanho: `169929` bytes
-- SHA-256: `2a5032e1c4f879dae18cecef2535c40de705c7f67eaa80117a3045f0fa78d705`
+- tamanho: `182371` bytes
+- SHA-256: `847f05a59863879c832fb31203f36ae80622c1a050361d4c1d2ebd7e1c3ee028`
 - MCP: não incluído
 - marketplace: não incluído no ZIP
 - estado: publicado
@@ -19,13 +19,14 @@ Artefatos prontos para `ChatGPT -> Criar plugin -> Importar`.
 
 | Skill | SHA-256 |
 |---|---|
-| alinhamento-macro-priorizacao | `b843bc34e197fb26c0dca6e71d262a6a7e08e7258db5b8b45e611f70202c85f3` |
-| engenharia-simulacao-sistemas-automacao | `fb8ade4759f598121ed08cd8a3c479f294cda00d51a0acfc56a682732be74e21` |
-| governanca-projetos-continuidade | `376c33b82509f5ad1481385bf5bda50dee2d297f2af9a60d6032d9c933c027f8` |
-| modelagem-fisico-matematica | `2233c31447af20af866443d80f47b5f67312061ccfe8fcc2d7dd9898adb27aca` |
-| organizacao-higiene-repositorio | `2f5cb0ff1165bd17d2ab23c06f7455ad11bf8411004605532c24c6f207e82f99` |
+| alinhamento-macro-priorizacao | `989874699ea26ea128fa602a4ae6aaf964eddb663fa800380fa4bdffb5e802ec` |
+| engenharia-simulacao-sistemas-automacao | `8893040d66360eeec324e3f37a5b6aa7f56ab8eceb599690ce811abcbaf02393` |
+| governanca-projetos-continuidade | `23dcd9032fb0ee84e7a0a983193a0b9e0318bcd71b8b0ac2ab387ea770d141c8` |
+| modelagem-fisico-matematica | `489d3e5ce17cf95c9b43db881956c5fb768fa4ec7f9cc46fc1e2d979a9e68d40` |
+| organizacao-higiene-repositorio | `59c099d9668aaa63d2e1bdd0062f673d6e9a0e0fe580ba587826faa63993fa2d` |
 
 ## Histórico
 
+- `gpt-project-toolkit-0.2.1.zip` — superseded pela revisão V2 de fechamento de verificação e impacto delimitado.
 - `gpt-project-toolkit-0.2.0.zip` — superseded por reorganização documental/licenciamento.
 - `gpt-project-governance-0.1.1.zip` — superseded por identidade excessivamente orientada à governança.
